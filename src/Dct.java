@@ -54,7 +54,7 @@ public class Dct {
 					}
 				}
 				c[k][l] = alf1[k]*alf2[l]*sum;
-				//System.out.println(k+" "+l+": "+sum+"*"+alf1[k]+"*"+alf2[l]+" -> "+c[k][l]);
+				System.out.println(k+" "+l+": "+sum+"*"+alf1[k]+"*"+alf2[l]+" -> "+c[k][l]);
 			}
 		}
 		
