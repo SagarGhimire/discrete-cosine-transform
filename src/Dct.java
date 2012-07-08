@@ -1,76 +1,34 @@
 public class Dct {
-	public static double[][] dct2old(double[][] z) throws Exception {
+	public static void printMatrix(double[][] z) {
+		int n = z.length;
+		int m = z[0].length;
+		
+		System.out.print("[");
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				System.out.print(z[i][j]);
+				if(j != m-1)
+					System.out.print(" ");
+			}
+			if(i != n-1)
+				System.out.println();
+		}
+		System.out.println("]");
+	}
+	
+	public static double[][] dct2(double[][] z, double offset) throws Exception {
 		if(z.length == 0)
-			throw new Exception("vals empty");
+			throw new Exception("z empty");
 		
 		if(z[0].length == 0)
-			throw new Exception("row empty");
+			throw new Exception("z row empty");
 		
 		int n = z.length;
 		int m = z[0].length;
 		
-		System.out.println(n+" "+m);
+		//System.out.println(n+" "+m);
 		
 		double[][] c = new double[n][m];
-		/*double[][] alfa = new double[n][m];
-		
-		for(int k=0; k<n; k++) {
-			for(int l=0; l<m; l++) {
-				if(k == 0 && l == 0) {
-					alfa[k][l] = 1./Math.sqrt(n*m);
-					continue;
-				}
-				
-				if(k == 0) {
-					alfa[k][l] = 1./(Math.sqrt(n)*Math.sqrt(m/2.));
-					continue;
-				}
-				
-				if(l == 0) {
-					alfa[k][l] = 1./(Math.sqrt(n/2.)*Math.sqrt(m));
-					continue;
-				}
-				
-				alfa[k][l] = 1./(Math.sqrt(n/2.)*Math.sqrt(m/2.));
-			}
-		}
-		
-		double[] alf1 = new double[n];
-		double[] alf2 = new double[m];
-		
-		alf1[0] = 1. / Math.sqrt(n);
-		for(int k=1; k<n; k++) {
-			alf1[k] = Math.sqrt(2./n);
-		}
-		
-		alf2[0] = 1. / Math.sqrt(m);
-		for(int l=1; l<m; l++) {
-			alf2[l] = Math.sqrt(2./m);
-		}
-		
-		double x;
-		double y;
-		double commonx = 1./(2.*n);
-		double commony = 1./(2.*m);
-		double subsumx;
-		double subsumy;
-		
-		for(int k=0; k<n; k++) {
-			for(int l=0; l<m; l++) {
-				subsumx = 0;
-				for(int i=0; i<n; i++) {
-					subsumy = 0;
-					for(int j=0; j<m; j++) {
-						y = ((double) j)/m + commony;
-						subsumy += z[i][j] * Math.cos(l*Math.PI*y);
-					}
-					x = ((double) i)/n + commonx;
-					subsumx += alf1[k]*alf2[l]*subsumy*Math.cos(k*Math.PI*x);
-				}
-				c[k][l] =  alf1[k]*alf2[l]*subsumx;
-			}
-		}*/
-		
 		double[] alf1 = new double[n];
 		double[] alf2 = new double[m];
 		
@@ -90,121 +48,62 @@ public class Dct {
 				sum = 0;
 				for(int i=0; i<n; i++) {
 					for(int j=0; j<m; j++) {
-						sum += z[i][j]*Math.cos((Math.PI*(2*i+1)*k)/(2*n))*Math.cos((Math.PI*(2*j+1)*l)/(2*m));
+						//System.out.println("1. "+sum);
+						sum += (z[i][j]+offset)*Math.cos((Math.PI*(2*i+1)*k)/(2*n))*Math.cos((Math.PI*(2*j+1)*l)/(2*m));
+						//System.out.println("2. "+sum);
 					}
 				}
-				
 				c[k][l] = alf1[k]*alf2[l]*sum;
-				System.out.println(k+" "+l+": "+sum+"*"+alf1[k]+"*"+alf2[l]+" -> "+c[k][l]+" "+z[k][l]);
+				//System.out.println(k+" "+l+": "+sum+"*"+alf1[k]+"*"+alf2[l]+" -> "+c[k][l]);
 			}
 		}
 		
 		return c;
 	}
 	
-	public static double[][] dctrow(double[][] z, int r) {
-		int n = z[0].length;
-		double n_d = n;
-		
-		double[] alfa = new double[n];
-		alfa[0] = Math.sqrt(1./n_d);
-		for(int k=1; k<n; k++) {
-			alfa[k] = Math.sqrt(2./n_d);
-		}
-		
-		for(int k=0; k<n; k++) {
-			double sum = 0;
-			double k_d = k;
-			for(int i=0; i<n; i++) {
-				double i_d = i;
-				sum += z[r][i]*Math.cos((Math.PI*(2.*i_d+1.)*k_d)/(2.*n_d));
-			}
-			z[r][k] = alfa[k]*sum;
-		}
-		
-		return z;
-	}
-	
-	public static double[][] dctcol(double[][] z, int c) {
-		int n = z.length;
-		double n_d = n;
-		
-		double[] alfa = new double[n];
-		alfa[0] = Math.sqrt(1./n_d);
-		for(int k=1; k<n; k++) {
-			alfa[k] = Math.sqrt(2./n_d);
-		}
-		
-		for(int k=0; k<n; k++) {
-			double sum = 0;
-			double k_d = k;
-			for(int i=0; i<n; i++) {
-				double i_d = i;
-				sum += z[i][c]*Math.cos((Math.PI*(2.*i_d+1.)*k_d)/(2.*n_d));
-			}
-			z[k][c] = alfa[k]*sum;
-		}
-		
-		return z;
-	}
-	
-	public static double[][] dct2(double[][] z) throws Exception {
-		int n = z.length;
-		int m = z[0].length;
-		
-		System.out.println(n+" "+m);
-		
-		for(int r=0; r<n; r++) {
-			z = dctrow(z, r);
-		}
-		
-		for(int c=0; c<m; c++) {
-			z = dctcol(z, c);
-		}
-		
-		return z;
-	}
-	
 	public static void test1() throws Exception {
-		 double[][] vals = {{1.,2.,3.},{4.,5.,6.}};
-		 double[][] vals2 = {{1.,2.,3.},{4.,5.,6.}};
-		 
-		 System.out.print("[");
-		 System.out.print(vals[0][0]+" ");
-		 System.out.print(vals[0][1]+" ");
-		 System.out.print(vals[0][2]);
-		 System.out.println();
-		 System.out.print(vals[1][0]+" ");
-		 System.out.print(vals[1][1]+" ");
-		 System.out.print(vals[1][2]);
-		 System.out.println("]");
-		 
-		 double[][] result = dct2(vals);
-		 
-		 System.out.print("[");
-		 System.out.print(result[0][0]+" ");
-		 System.out.print(result[0][1]+" ");
-		 System.out.print(result[0][2]);
-		 System.out.println();
-		 System.out.print(result[1][0]+" ");
-		 System.out.print(result[1][1]+" ");
-		 System.out.print(result[1][2]);
-		 System.out.println("]");
-		 
-		 result = dct2old(vals2);
-		 
-		 System.out.print("[");
-		 System.out.print(result[0][0]+" ");
-		 System.out.print(result[0][1]+" ");
-		 System.out.print(result[0][2]);
-		 System.out.println();
-		 System.out.print(result[1][0]+" ");
-		 System.out.print(result[1][1]+" ");
-		 System.out.print(result[1][2]);
-		 System.out.println("]");
+		double[][] vals = {{1.,2.,3.}, {4.,5.,6.}};
+		double offset = 0;
+		System.out.println("vals: ");
+		printMatrix(vals);
+		double[][] result = dct2(vals, offset);
+		System.out.println("result: ");
+		printMatrix(result);
+	}
+	
+	public static void test2() throws Exception {
+		double[][] vals = {{139., 144., 149., 153., 155., 155., 155., 155.}, 
+				{144., 151., 153., 156., 159., 156., 156., 156.}, 
+				{150., 155., 160., 163., 158., 156., 156., 156.}, 
+				{159., 161., 162., 160., 160., 159., 159., 159.}, 
+				{159., 160., 161., 162., 162., 155., 155., 155.}, 
+				{161., 161., 161., 161., 160., 157., 157., 157.}, 
+				{162., 162., 161., 163., 162., 157., 157., 157.}, 
+				{162., 162., 161., 161., 163., 158., 158., 158.}};
+		double offset = -128;
+		System.out.println("vals: ");
+		printMatrix(vals);
+		double[][] result = dct2(vals, offset);
+		System.out.println("result: ");
+		printMatrix(result);
+	}
+	
+	public static void test3() throws Exception {
+		double[][] vals = {{3.,7.,-5.}, {8.,-9.,7.}};
+		double offset = 0;
+		System.out.println("vals: ");
+		printMatrix(vals);
+		double[][] result = dct2(vals, offset);
+		System.out.println("result: ");
+		printMatrix(result);
 	}
 	
 	public static void main(String[] args) throws Exception {
+		System.out.println("TEST1");
 		test1();
+		System.out.println("\nTEST2");
+		test2();
+		System.out.println("\nTEST3");
+		test3();
 	}
 }
