@@ -11,10 +11,28 @@ import javax.imageio.ImageIO;
 
 public class PanelImage extends Panel {
 	private static final long serialVersionUID = -8456286372929884974L;
-	BufferedImage firstimage;
-	BufferedImage secondImage;
-	BufferedImage thirdImage;
+	private BufferedImage firstimage;
+	private BufferedImage secondImage;
+	private BufferedImage thirdImage;
+	private int x;
+	private int y;
 	
+	public int getXImage() {
+		return x;
+	}
+
+	public void setXImage(int x) {
+		this.x = x;
+	}
+	
+	public int getYImage() {
+		return y;
+	}
+
+	public void setYImage(int y) {
+		this.y = y;
+	}
+
 	public void loadImage(String src) throws IOException {
 		firstimage = ImageIO.read(new File(src)); 
 		
@@ -27,8 +45,8 @@ public class PanelImage extends Panel {
 
 	public void paint(Graphics g) {
 		g.drawImage(firstimage, 5, 0, null);
-		g.drawImage(secondImage, 399, 0, null);
-		g.drawImage(thirdImage, 793, 0, null);
+		g.drawImage(secondImage, x+15, 0, null);
+		g.drawImage(thirdImage, 2*x+25, 0, null);
 	}
 	
 	public static final boolean isGreyscaleImage(PixelGrabber pg) {

@@ -5,10 +5,15 @@ public class Main {
 		JFrame frame = new JFrame("Display image");
 		PanelImage image = new PanelImage();
 		frame.getContentPane().add(image);
-		frame.setSize(1182, 300);
+		
 		frame.setVisible(true);
 		
-		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp";
+		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/artificial.bmp";
+		int x = 768;
+		int y = 512;
+		frame.setSize((x+10)*3, y);
+		image.setXImage(x);
+		image.setYImage(y);
 		image.loadImage(src);
 		
 		double[][] pixels = image.getPixels();
@@ -16,11 +21,17 @@ public class Main {
 		//Dct.printMatrix(pixels);
 		System.out.println("get pixels, now calculate dct2");
 		
-		//double[][] result = Dct.dct2(pixels, -128.);
+		double offset = -128.;
 		
-		//System.out.println("now dct2, set pixels");
+		double[][] result = Dct.dct2(pixels, offset);
 		
-		image.setPixels(pixels);
+		System.out.println("now dct2, now calculate idct2");
+		
+		double[][] ipixels = Dct.idct2(result, -offset);
+		
+		System.out.println("set pixels");
+		
+		image.setPixels(ipixels);
 		
 		System.out.println("tadaaam!");
 		

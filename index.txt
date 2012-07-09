@@ -2,14 +2,17 @@ http://www3.matapp.unimib.it/corsi-2011-2012/viewtopic.php?t=467
 
 Per la relazione relativa alla seconda parte del corso occorre svilluppare i seguenti punti:
 
-1. Scegliere un ambiente di programmazione che non sia MATLAB o affini.
+OK 1. Scegliere un ambiente di programmazione che non sia MATLAB o affini. 
 
 2. Implementare la DCT2 in modo elementare come visto a lezione (DCT prima per colonne e poi per righe).
 
 3. Confrontarla con una versione FAST e fare dei benchmark per verificare la differenza dei tempi spiegata a lezione. Io consiglio la FFTW che implementa anche direttamente la versione DCT. FFTW ? scritta in C ma dovrebbe funzionare in tutti gli ambienti di programmazione come spiegato qui (Paragrafo Calling FFTW from Other Languages).
 ATTENZIONE: verificare che entrambe le implementazioni diano gli stessi risultati (potrebbe essere necessaria una normalizzazione nella FFTW - leggere la documentazione!). Qui trovate alcuni casi di riferimento che i vostri codici devono riprodurre.
 
-4. leggere una o pi? immagini a scelta in toni di grigio in formato bitmap, trasformarle tramite la DCT2 e studiare cosa succede se vengono tagliate delle frequenze. Usare la versione FAST.
+OK 4. leggere una o pi? immagini a scelta in toni di grigio in formato bitmap, trasformarle tramite la DCT2 e studiare cosa succede se vengono tagliate delle frequenze.
+ 
+5.Usare la versione FAST.
+
 ATTENZIONE: a differenza del jpeg, che fa la DCT2 sui blocchetti 8x8, qui bisogna fare la DCT2 direttamente su TUTTA l'immagine. Qui trovate delle immagini che potete usare; le subdirectory scaled contengono le stesse immagini via via scalate.
 
 Trovate qui le mie note e altro materiale sul jpeg.
