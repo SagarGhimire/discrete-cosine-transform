@@ -60,7 +60,22 @@ public class PanelImage extends Panel {
 		double[][] pixels = new double[w][h];
 		int[] buffer = new int[1];
 		
-		System.out.println(secondImage.getType());
+		for( int i = 0; i < w; i++ ) {
+			for( int j = 0; j < h; j++ ) {
+				raster.getPixel(i, j, buffer);
+				pixels[i][j] = (double) buffer[0];
+			}
+		}
+		
+		return pixels;
+	}
+	
+	public static double[][] getPixels(BufferedImage image) throws Exception {
+		int w = image.getWidth();
+		int h = image.getHeight();
+		WritableRaster raster = image.getRaster();
+		double[][] pixels = new double[w][h];
+		int[] buffer = new int[1];
 		
 		for( int i = 0; i < w; i++ ) {
 			for( int j = 0; j < h; j++ ) {

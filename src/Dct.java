@@ -1,3 +1,7 @@
+import java.util.Date;
+
+import edu.emory.mathcs.jtransforms.dct.DoubleDCT_2D;
+
 public class Dct {
 	
 	/* k=dct2(zij-128) per ogni i e j (e ottieni le frequenze dell'immagine) OK
@@ -183,12 +187,36 @@ public class Dct {
 		double offset = 0;
 		System.out.println("vals: ");
 		printMatrix(vals);
+
+		long startS = new Date().getTime();
 		double[][] result = dct2(vals, offset);
-		System.out.println("result: ");
+		long endS =  new Date().getTime();
+		
+		System.out.println("dct2 result: ");
 		printMatrix(result);
+		
+		System.out.println("time: "+(endS-startS));
+		
 		double[][] ivals = idct2(result, -offset);
 		System.out.println("idct2 result: ");
 		printMatrix(ivals);
+		
+		System.out.println("jtransform dct2 result: ");
+		int n = vals.length;
+		int m = vals[0].length;
+		for(int k=0; k<n; k++) {
+			for(int l=0; l<m; l++) {
+				vals[k][l] += offset;
+			}
+		}
+		
+		long startO = new Date().getTime();
+		DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
+		dct_2d.forward(vals, true);
+		long endO = new Date().getTime();
+		printMatrix(vals);
+		
+		System.out.println("time: "+(endO-startO));
 	}
 	
 	public static void test2() throws Exception {
@@ -200,15 +228,40 @@ public class Dct {
 				{161., 161., 161., 161., 160., 157., 157., 157.}, 
 				{162., 162., 161., 163., 162., 157., 157., 157.}, 
 				{162., 162., 161., 161., 163., 158., 158., 158.}};
+		
 		double offset = -128;
 		System.out.println("vals: ");
 		printMatrix(vals);
+		
+		long startS = new Date().getTime();
 		double[][] result = dct2(vals, offset);
-		System.out.println("result: ");
+		long endS =  new Date().getTime();
+		
+		System.out.println("dct2 result: ");
 		printMatrix(result);
+		
+		System.out.println("time: "+(endS-startS));
+		
 		double[][] ivals = idct2(result, -offset);
 		System.out.println("idct2 result: ");
 		printMatrix(ivals);
+		
+		System.out.println("jtransform dct2 result: ");
+		int n = vals.length;
+		int m = vals[0].length;
+		for(int k=0; k<n; k++) {
+			for(int l=0; l<m; l++) {
+				vals[k][l] += offset;
+			}
+		}
+		
+		long startO = new Date().getTime();
+		DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
+		dct_2d.forward(vals, true);
+		long endO = new Date().getTime();
+		printMatrix(vals);
+		
+		System.out.println("time: "+(endO-startO));
 	}
 	
 	public static void test3() throws Exception {
@@ -216,12 +269,36 @@ public class Dct {
 		double offset = 0;
 		System.out.println("vals: ");
 		printMatrix(vals);
+
+		long startS = new Date().getTime();
 		double[][] result = dct2(vals, offset);
+		long endS =  new Date().getTime();
+		
 		System.out.println("dct2 result: ");
 		printMatrix(result);
+		
+		System.out.println("time: "+(endS-startS));
+		
 		double[][] ivals = idct2(result, -offset);
 		System.out.println("idct2 result: ");
 		printMatrix(ivals);
+		
+		System.out.println("jtransform dct2 result: ");
+		int n = vals.length;
+		int m = vals[0].length;
+		for(int k=0; k<n; k++) {
+			for(int l=0; l<m; l++) {
+				vals[k][l] += offset;
+			}
+		}
+		
+		long startO = new Date().getTime();
+		DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
+		dct_2d.forward(vals, true);
+		long endO = new Date().getTime();
+		printMatrix(vals);
+		
+		System.out.println("time: "+(endO-startO));
 	}
 	
 	public static void main(String[] args) throws Exception {
