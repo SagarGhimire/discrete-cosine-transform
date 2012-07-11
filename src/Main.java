@@ -16,7 +16,7 @@ public class Main {
 		//frame.getContentPane().add(image);
 		//frame.setVisible(true);
 		
-		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/";
+		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/";
 		String[] names = {
 				"artificial.bmp",
 				"big_building.bmp",

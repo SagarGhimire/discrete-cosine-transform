@@ -1,5 +1,5 @@
 benchmark on scaled/scaled/scaled
-
+----------------------------------------------------------------------
 get pixels, now calculate dct2 on artificial.bmp
 time on my dct2: 7942
 time on jtransform dct2: 193
@@ -47,4 +47,55 @@ time on my dct2: 7588
 time on jtransform dct2: 8
 
 benchmark on scaled/scaled
+----------------------------------------------------------------------
+get pixels, now calculate dct2 on artificial.bmp
+time on my dct2: 66245
+time on jtransform dct2: 534
+get pixels, now calculate dct2 on big_building.bmp
+time on my dct2: 1135163
+time on jtransform dct2: 2639
+get pixels, now calculate dct2 on big_tree.bmp
+time on my dct2: 597656
+time on jtransform dct2: 1731
+get pixels, now calculate dct2 on bridge.bmp
+time on my dct2: 157433
+time on jtransform dct2: 650
+get pixels, now calculate dct2 on cathedral.bmp
+time on my dct2: 60869
+time on jtransform dct2: 118
+get pixels, now calculate dct2 on deer.bmp
+time on my dct2: 151674
+time on jtransform dct2: 335
+get pixels, now calculate dct2 on fireworks.bmp
+time on my dct2: 82743
+time on jtransform dct2: 82
+get pixels, now calculate dct2 on flower_foveon.bmp
+time on my dct2: 25788
+time on jtransform dct2: 17
+get pixels, now calculate dct2 on hdr.bmp
+time on my dct2: 63813
+time on jtransform dct2: 125
+get pixels, now calculate dct2 on leaves_iso_200.bmp
+time on my dct2: 60658
+time on jtransform dct2: 527
+get pixels, now calculate dct2 on leaves_iso_1600.bmp
+time on my dct2: 61871
+time on jtransform dct2: 68
+get pixels, now calculate dct2 on nightshot_iso_100.bmp
+time on my dct2: 82330
+time on jtransform dct2: 111
+et pixels, now calculate dct2 on nightshot_iso_1600.bmp
+time on my dct2: 111011
+time on jtransform dct2: 59
+get pixels, now calculate dct2 on spider_web.bmp
+time on my dct2: 207638
+time on jtransform dct2: 161
+get pixels, now calculate dct2 on zone_plate.bmp
+time on my dct2: 60285
+time on jtransform dct2: 29
 
+benchmark on scaled
+----------------------------------------------------------------------
+get pixels, now calculate dct2 on artificial.bmp
+time on my dct2: 518198
+time on jtransform dct2: 535
