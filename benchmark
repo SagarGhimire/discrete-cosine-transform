@@ -1,0 +1,50 @@
+benchmark on scaled/scaled/scaled
+
+get pixels, now calculate dct2 on artificial.bmp
+time on my dct2: 7942
+time on jtransform dct2: 193
+get pixels, now calculate dct2 on big_building.bmp
+time on my dct2: 127478
+time on jtransform dct2: 783
+get pixels, now calculate dct2 on big_tree.bmp
+time on my dct2: 81907
+time on jtransform dct2: 383
+get pixels, now calculate dct2 on bridge.bmp
+time on my dct2: 19125
+time on jtransform dct2: 316
+get pixels, now calculate dct2 on cathedral.bmp
+time on my dct2: 7479
+time on jtransform dct2: 79
+get pixels, now calculate dct2 on deer.bmp
+time on my dct2: 18021
+time on jtransform dct2: 118
+get pixels, now calculate dct2 on fireworks.bmp
+time on my dct2: 10058
+time on jtransform dct2: 19
+get pixels, now calculate dct2 on flower_foveon.bmp
+time on my dct2: 3284
+time on jtransform dct2: 18
+get pixels, now calculate dct2 on hdr.bmp
+time on my dct2: 7875
+time on jtransform dct2: 40
+get pixels, now calculate dct2 on leaves_iso_200.bmp
+time on my dct2: 7438
+time on jtransform dct2: 10
+get pixels, now calculate dct2 on leaves_iso_1600.bmp
+time on my dct2: 7551
+time on jtransform dct2: 10
+get pixels, now calculate dct2 on nightshot_iso_100.bmp
+time on my dct2: 10080
+time on jtransform dct2: 33
+get pixels, now calculate dct2 on nightshot_iso_1600.bmp
+time on my dct2: 10245
+time on jtransform dct2: 10
+get pixels, now calculate dct2 on spider_web.bmp
+time on my dct2: 22486
+time on jtransform dct2: 38
+get pixels, now calculate dct2 on zone_plate.bmp
+time on my dct2: 7588
+time on jtransform dct2: 8
+
+benchmark on scaled/scaled
+
