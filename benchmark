@@ -99,3 +99,29 @@ benchmark on scaled
 get pixels, now calculate dct2 on artificial.bmp
 time on my dct2: 518198
 time on jtransform dct2: 535
+get pixels, now calculate dct2 on big_building.bmp
+time on my dct2: 8364020
+time on jtransform dct2: 7823
+get pixels, now calculate dct2 on big_tree.bmp
+time on my dct2: 4872149
+time on jtransform dct2: 3647
+get pixels, now calculate dct2 on bridge.bmp
+time on my dct2: 1369571
+time on jtransform dct2: 411
+get pixels, now calculate dct2 on cathedral.bmp
+time on my dct2: 540372
+time on jtransform dct2: 267
+get pixels, now calculate dct2 on deer.bmp
+time on my dct2: 1151979
+time on jtransform dct2: 2690
+get pixels, now calculate dct2 on fireworks.bmp
+time on my dct2: 658911
+time on jtransform dct2: 568
+get pixels, now calculate dct2 on flower_foveon.bmp
+time on my dct2: 267050
+time on jtransform dct2: 155
+get pixels, now calculate dct2 on hdr.bmp
+time on my dct2: 585721
+time on jtransform dct2: 469
+get pixels, now calculate dct2 on leaves_iso_200.bmp
+
