@@ -16,6 +16,7 @@
 % TODO [DCT2] le vostre considerazioni
 
 \documentclass[12pt]{article}
+\usepackage[margin=1.5cm]{geometry}
 \usepackage[italian]{babel}
 \usepackage{booktabs}
 \usepackage{algorithm}% http://ctan.org/pkg/algorithm
@@ -27,6 +28,11 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 
+\usepackage{listings}
+\lstset{language=Java, basicstyle=\small}
+\lstset{linewidth=\textwidth, showstringspaces=false}
+\lstset{frame=trBL}
+
 \begin{document}
 \maketitle
 
@@ -37,8 +43,40 @@
 \subsection{Jama}
 
 \subsection{Programma lu-decomposition}
+\lstinputlisting[caption=lu-decompostion,label=lst:java]{../../lu-decomposition/src/Main.java}
 
 \subsection{Risultati e conclusioni}
+
+\begin{table}
+\begin{tabular}{|l|r|r|r|r|r|}
+TEST         &	ERRORE RELATIVO  &	ERRORE PRIMA COMP  & AUTOVALORE N 7    &	TIME TO SOLVE &	TIME TO EIGEN \\
+\hline
+     easy-10 &	    3.510833e-16 &	      2.220446e-16 &           7.000000 & 	0ms		 	 &		0ms   \\
+    easy-100 &	    2.853360e-15 &	      1.110223e-15 &           7.000000 & 	1ms		 	 &		0ms   \\
+   easy-1000 &	    3.174443e-14 &	      3.264056e-14 &           7.000000 &	670ms		 &		9ms   \\
+     rand-10 &	    4.711062e-15 &	      8.659740e-15 &               n.a. & 	0ms		 	 &		0ms   \\
+    rand-100 &	    1.001901e-13 &	      8.237855e-14 &               n.a. & 	1ms		 	 &		0ms   \\
+   rand-1000 &	    2.547025e-12 &	      4.767298e-13 &               n.a. &	647ms		 &		0ms   \\
+   rand-5000 &	    9.787832e-12 &	      1.521339e-11 &               n.a. &	101418ms	 &		0ms   \\
+      bad-10 &	    3.118816e-07 &	      2.176155e-07 &           6.000000 & 	0ms		 	 &		0ms   \\
+     bad-100 &	    2.258293e-05 &	      2.394252e-05 &           6.000000 & 	1ms		 	 &		0ms   \\
+     bad-500 &	    4.622912e-05 &	      4.654016e-05 &           6.000000 &	69ms		 &		2ms   \\
+    bad-1000 &	    2.279306e-04 &	      2.257559e-04 &           6.000000 &	645ms		&		13ms   \\
+  verybad-10 &	    4.993346e-04 &	      4.179128e-04 &           6.000000 & 	0ms		 	&		0ms   \\
+ verybad-100 &	    3.283544e-03 &	      3.125627e-03 &           6.000000 & 	2ms		 	&		0ms   \\
+ verybad-500 &	    1.065932e-02 &	      1.067230e-02 &           6.000000 &	70ms		 &		1ms   \\
+verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644ms		 &		8ms   \\
+      eig-10 &	            n.a. &	              n.a. &           1.212788 & 	0ms		 	&		0ms   \\
+      eig-20 &	            n.a. &	              n.a. &           0.616452 & 	0ms		 &			0ms   \\
+      eig-30 &	            n.a. &	              n.a. &           0.386165 & 	0ms		 &			0ms   \\
+      eig-40 &	            n.a. &	              n.a. &           0.251158 & 	0ms		 &			0ms   \\
+      eig-50 &	            n.a. &	              n.a. &           0.183589 & 	0ms		 &			0ms   \\
+     eig-100 &	            n.a. &	              n.a. &           0.105820 & 	0ms		 &			1ms   \\
+    eig-1000 &	            n.a. &	              n.a. &           0.005791 & 	0ms		 &			7ms   \\
+    eig-2000 &	            n.a. &	              n.a. &           0.004094 & 	0ms		&			30ms   \\
+    eig-5000 &	            n.a. &	              n.a. &           0.001635 &	0ms		&			967ms   \\
+\end{tabular}
+\end{table}
 
 \section{Discrete Cosine Transform}
 
@@ -47,404 +85,8 @@
 \subsection{JTransform}
 
 \subsection{Programma discrete-cosine-transform}
+\lstinputlisting[caption=discrete-cosine-transform,label=lst:java]{../src/Dct.java}
 
 \subsection{Risultati e conclusioni}
 
 \end{document}
-
-% \newcommand{\N}{\mathbb{N}}
-% \newcommand{\R}{\numberset{R}}
-% 
-% \newenvironment{orsistema}%
-%   {OR\left\lbrace\begin{array}{@{}l@{}}}%
-%   {\end{array}\right.}
-% 
-% \begin{document}
-% \maketitle
-% 
-% \section{Esercizio 1}
-% {\bf Testo:} Descrivere la tabella delle transizioni di una macchina di Turing che riconosce il linguaggio
-% costituto dalle parole della forma \textit{w\#w\#} dove \textit{w} \`e definita su alfabeto binario. Utilizzare
-% una macchina che ha un solo nastro (sia in lettura che in scrittura). Se si preferisce
-% descrivere le transizioni in forma tabellare.
-% Dire se la macchina opera in modo deterministico o in modo non deterministico.\\\\
-% {\bf Soluzione: }
-% Sia M una macchina di Turing definita in questo modo:\[M = (\{A, B, C, D, E, F, G, H, I, L\}, \{0, 1, \#\}, \{0, 1, \#, X, Y, B\}, \delta, A, B, \{L\})\]
-% Descrivo la funzione di transizione in forma tabellare:\\\\
-% \begin{tabular}{lllllll}
-% \toprule
-% Stato&	0&	1&	\#&	X&	Y&	B\\
-% \midrule
-% A&	(B,X,R)&(C,X,R)&(H,\#,R)&-&	-&	-\\
-% B&     	(B,0,R)&(B,1,R)&(D,\#,R)&-&	-&	-\\
-% C&	(C,0,R)&(C,1,R)&(E,\#,R)&-&	-&     	-\\
-% D&	(F,Y,L)&-&	-&     	-&     	(D,Y,R)&-\\
-% E&	-&	(F,Y,L)&-&	-&	(E,Y,R)&-\\
-% F&	-&	-&	(G,\#,L)&-&	(F,Y,L)&-\\
-% G&	(G,0,L)&(G,1,L)&-&	(A,X,R)&-&	-\\
-% H&     	-&     	-&     	(I,\#,R)&-&     	(H,Y,R)&-\\
-% I&     	-&     	-&     	-&     	-&     	-&     	(L,B,R)\\
-% L&     	-&     	-&     	-&     	-&     	-&     	-\\
-% \bottomrule
-% \end{tabular}\\
-% La macchina opera in modo deterministico. Accetta stringhe del genere $w\#w\#$ dove $w \in \{0, 1\}^*$ e termina correttamente, negli altri casi non termina.\\
-% 
-% \newpage
-% \section{Esercizio 2}
-% \newcommand{\ai}{\textit{$a_i$}}
-% \newcommand{\aj}{\textit{$a_j$}}
-% {\bf Testo:} Dire se il seguente problema $\Pi$ \`e in P o se \`e NP-completo. Sia P = \textit{\{$a_1$,$a_2$,...,$a_n$\}} un
-% insieme di $n$ parole che occorrono in un testo T. Si dice che una coppia di simboli (\ai, \aj)
-% \`e un concetto se e solo se le parole $a_i$ e $a_j$ sono sinonimi (ad esempio \ai = casa, \aj = abitazione).\\
-% Il problema $\Pi$ prende in input un insieme $P$ di $n$ parole, un insieme $C$ di concetti definiti su
-% $P$ e calcola un sottoinsieme $P'$ di parole di $P$ di minima cardinalit\`a tale che ogni concetto
-% in $C$ abbia almeno un elemento (parola) in $P$. Fare la dimostrazione di quanto affermato.\\\\
-% {\bf Soluzione:} Dal testo sappiamo che $P'$ avr\`a cardinalit\`a c = $|C|$. Per risolvere il problema $\Pi$ abbiamo bisogno di ridurre il problema a un problema NP noto. Definiamo prima cos'\`e la riduzione polinomiale.\\\\
-% {\bf Riduzione Polinomiale: } \[ A \leq_p B \]
-% $x \in A$ se e solo se $f(x) \in B$, dove f è computabile su TM in tempo polinomiale.\\
-% Possiamo dire che $B \in$ NP-difficile se e solo se $A \leq_p B \forall A \in NP$. Diciamo che B \`e NP-completo se B \`e NP-difficile e $B \in NP$.\\\\
-% {\bf $\Pi \in$ NP:} Per dimostrare che $\Pi \in$ NP dobbiamo dimostrare che: 
-% \begin{itemize}
-% \item esiste un algoritmo A che verifica $\Pi$ in tempo polinomiale 
-% \item se $x \in \Pi$ allora esiste $u \in \{0, 1\}*$ tale che A(x, y)=1.
-% \item se $x \notin \Pi$ e $\forall y \in \{0, 1\}*$, A(x, y) =0.
-% \end{itemize}
-% Creiamo un algoritmo A che prende in input C e $P'$ e per ogni elemento di C controlla ogni parola di $P'$ e vede se esprime quel concetto, in quel caso ritorna 1, altrimenti ritorna 0. L'algoritmo di verifica si esegue in tempo polinomiale $|C|\times {|P'|}$. Questo dimostra che il problema $\Pi \in $ NP.\\
-% {\bf $\Pi$ \`e NP-Difficile:} Tornando al problema riduciamo INDSET, problema NP noto, al nostro problema $\Pi$, dimostrando cos\`i che $\Pi$ \`e NP-difficile. Si ricorda che IND = \{(G, k): $\exists$ 
-% un insieme indipendente del grafo G di dimensione k\}. Un insieme indipendente di G \`e un sottinsieme $V'$ di V(G) tale che $\forall$coppia u,v $\in$ V', (u,v) $\notin$ E(G).
-% Costruiamo la riduzione polinomiale da IND a $\Pi$: ogni vertice di G sar\`a legato a una parola di P e costruiamo un arco tra tutti quei vertici legati a parole che non hanno concetti in comune:
-% \[\forall u,v \in G \to (u,v) \in E(G) \textrm{ se e solo se } (a_u, a_v) \textrm{ non \`e un concetto }\]
-% Quindi se cerchiamo $IND(|C|)$, cio\`e un insieme indipendente di $|C|$ vertici, non avremo altro che l'insieme $P'$ contenente $|C|$ parole che esprimono ognuno un concetto diverso, proprio quello che stavamo cercando.
-% Cos\`i dimostriamo che $\Pi$ \`e NP-difficile.\\
-% Avendo dimostrato questi due passi sappiamo che $\Pi$ \`e NP-completo.
-% 
-% \newpage
-% \section{Esercizio 3}
-% {\bf Testo:} Fornire un esempio di problema non decidibile e spiegare perch\`e lo \`e.
-% Si chiede di dare la definizione formale di classe P, classe NP, problema NP-difficile e
-% problema NP-completo. Discutere molto brevemente le loro differenze.
-% \\\\ 
-% {\bf Soluzione:} Un esempio di problema non decidibile \`e la funzione \[UC=\{0,1\}^* \to \{0,1\}\]
-% La funzione $UC$ \`e definita come segue: per ogni $\alpha \in \{0,1\}^∗$, sia M una TM rappresentata da $\alpha$.
-% Se con input $\alpha$, M si arresta in un finito numero di step e da come risultato 1 allora $UC(\alpha)$ \`e uguale a
-% 0, altrimenti $UC(\alpha)$ \`e uguale a 1.
-% Dimostriamo per assurdo che esista una TM M tale che $M(\alpha)$ = $UC(\alpha)$ per ogni $\alpha \in \{0,1\}^∗$.
-% Allora, in particolare, per $M(M) = UC(M)$. Ma questo \`e impossibile: dalla definizione di UC, se $UC(M) = 1$ allora 
-% $M(M)$ non pu\`o essere uguale a 1, e se $UC(M) = 0$ allora  $M(M)$ non pu\`o essere uguale a 0.\\\\
-% Per definire in modo formale la classe P definiremo la classe DTIME.\\\\
-% {\bf classe DTIME:} Sia $T: \N\to \N$ una funzione. Sar\`a DTIME(T(n)) l'insieme di tutte le funzioni Booleane (con un bit di output) 
-% che sono computabili in tempo c*T(n) per una costance $c > 0$.\\\\
-% {\bf classe P:} $P = U_{c \geq 1} DTIME(n^c)$.\\\\
-% {\bf classe NP:} Un linguaggio $L \subseteq \{0, 1\}^*$ \`e in NP se esiste una funzione polinomiale p: $\N\to \N$ e una TM in tempo polinomiale M tale che per ogni $x\in \{0, 1\}^*$,\[x\in L \iff \exists u\in \{0, 1\}^{p(|x|)}\]
-% Se $x\in L$ e $u\in \{0, 1\}^{p(|x|)}$ soddisfa M(x, u) = 1 allora possiamo chiamare u un certificato per x (rispetto al linguaggio L e macchina M).\\\\
-% {\bf classe NP-difficile:} $\Pi$ \`e NP-difficile se esiste una risoluzione polinomiale da ogni problema in NP a $\Pi$.\\\\
-% {\bf classe NP-completo:} $\Pi$ \`e NP-completo, se $\Pi \in NP$ e $\Pi$ \`e NP-difficile.\\\\
-% {\bf Relazioni fra classi:} NP-completo \`e ovviamente un sottoinsieme della classe NP-difficile ed \`e un sottoinsieme della classe NP, come si vede in figura:\\\\
-% \includegraphics[width=\textwidth]{P_np.png}\\\\
-% L'unica relazione provata tra P e NP \`e:\[P \subseteq NP \subseteq U_{c \geq 1} DTIME(2^{n^c})\]
-% {\bf Dimostrazione: } ($P \subseteq NP$): Supponendo che $L \in P$ \`e decidibile in tempo polinomiale da una TM N. $L\in NP$ dal momento che posso prendere N come la macchina M nella definizione di NP e rendere p(x) il polinomio zero (in altre parole, u \`e una stringa vuota).\\
-% {\bf $NP \subseteq U_{c \geq 1} DTIME(2^{n^c})$: } Se $L \in NP$ e M, p() sono come nella definizione di NP allora possiamo risolvere L in tempo $2^{O(p(n))}$ enumerando tutte le u possibili, con M per verificare se u \`e un certificato valido per l'ingresso x. La macchina accetta se e solo se una u \`e stata trovata. Poichè $p(n) = O(n^c)$ per qualche $c > 1$ allora la macchina termina in tempo $2^{O(p(n))}$. Cos\`i il teorema \`e dimostrato.
-% 
-% \section{Esercizio 4}
-% {\bf Testo:} Mostrare come deve essere usato il paradigma SHIFT-AND per trovare in un testo $T$ le
-% occorrenze di un pattern $P$ ammettendo al pi\`u 2 cancellazioni, 2 inserimenti e 0 mutazioni.
-% Definire tutti i passi dell'algoritmo e anche i vari vettori richiesti per l'esecuzione dello
-% stesso. Mostrarne l'esecuzione su un esempio.\\\\
-% {\bf Soluzione:} SHIFT-AND \`e un algoritmo bit-oriented, abbiamo un testo T e un pattern P, nel caso pi\`u generale possiamo definire N
-% matrici M di grandezza $|P| \times (|T|+1)$ dove N \`e il numero di errori e K vettori U lunghi $|P|$ dove K = $|L|$, il nostro alfabeto.\\
-% Avremo $U(x)[i] = 1$ quando matchiamo la lettera x con la lettera i-esima del pattern P. Mostriamo un esempio:\\\\
-% P = BANANA\\
-% U(A) = 010101\\
-% U(B) = 100000\\
-% U(N) = 001010\\\\
-% Nel paradigma SHIFT-AND esistono tre tipi di errori:
-% \begin{itemize}
-% 	\item Mismatch: il carattere i-esimo di P \`e diverso dal carattere j-esimo di T
-% 	\item Delete: aggiungo una lettera al pattern
-% 	\item Insert: tolgo una lettera al pattern
-% \end{itemize}
-% Nel nostro problema abbiamo quindi N = 4 e non calcoliamo il caso in cui ci sia un mismatch. Decidiamo che:
-% \[M^k_{i,j} = 1\] 
-% se il prefisso del pattern P fino alla posizione i ha un match esatto con T fino dalla posizione j-i+1 alla posizione j con un numero $\leq$ k di errori.\\
-% La prima riga di ogni matrice avr\`a $d$ 1 e $n-d$ 0 dove $d$ è il numero di cancellazioni concesse (nella riga 0 ci permette di matchare il caso di un pattern $P$ e una stringa vuota $T$ che abbia lunghezza $l=|P|-d$).\\
-% Per costruire la matrice abbiamo bisogno della seguente operazione:
-% \[RSHIFT^k_{j}\]
-% dove prendo la j-esima riga della k-esima matrice, la shifto a destra e inserisco un 1 a sinistra.
-% Definiamo le varie matrici che ci serviranno per trovare i match del nostro pattern:
-% \[M^{i, d} = \textrm{Matrice con i inserimenti e d cancellazioni}\]
-% \[M^{0, 0}_j = RSHIFT^{0, 0}_{j-1} \textrm{ AND } U(T_j)\]
-% \[M^{0, k}_j =
-% \begin{orsistema}
-% RSHIFT^{0, k}_{j-1} \textrm{ AND } U(T_j)\\
-% RSHIFT^{0, k-1}_{j}
-% \end{orsistema}\]
-% \[M^{k, 0}_j =
-% \begin{orsistema}
-% RSHIFT^{k, 0}_{j-1} \textrm{ AND } U(T_j)\\
-% M^{k-1, 0}_{j-1}
-% \end{orsistema}\]
-% \[M^{i, d}_j =
-% \begin{orsistema}
-% RSHIFT^{i, d}_{j-1} \textrm{ AND } U(T_j)\\
-% M^{i-1, d}_{j-1}\\
-% RSHIFT^{i, d-1}_{j}
-% \end{orsistema}\]
-% E quindi nel nostro problema definiremo $M^{0, 0}$, $M^{0, 1}$, $M^{0, 2}$, $M^{1, 0}$, $M^{1, 1}$, $M^{1, 2}$, $M^{2, 0}$, $M^{2, 1}$, $M^{2, 2}$.
-% \begin{algorithm}[H]
-% \caption{Calcolo la Matrice M nel caso di i inserimenti e d cancellazioni}
-% \begin{algorithmic}
-% \Procedure{computeM}{$m, n, i, d, M, U$}
-% \For{$k=0\to MIN(i+d, n) \do$}
-% 	\State $M^{i, d}_{0, k}\gets 1$\Comment{Inizializzo nella riga 0 $k$ 1}
-% \EndFor
-% \For{$j=1\to n \do$} 
-% 	\State $tmp\gets RSHIFT^{i, d}_{j-1} \textrm{ AND }  U(T_j)$
-% 	\If{$i > 0$}
-% 		\State $tmp\gets tmp \textrm{ OR } M^{i-1, d}_{j-1}$
-% 	\EndIf
-% 	\If{$d > 0$}
-% 		\State $tmp\gets tmp \textrm{ OR } RSHIFT^{i, d-1}_{j}$
-% 	\EndIf
-% 	\State $M^{i, d}_{j}\gets tmp$
-% \EndFor
-% \State \Return $M$
-% \EndProcedure
-% \end{algorithmic}
-% \end{algorithm}
-% \begin{algorithm}[H]
-% \caption{Paradigma SHIFT-AND}
-% \begin{algorithmic}
-% \Procedure{ShiftAnd}{$T, P, I, D, L$}
-% \State $n\gets |P|$
-% \State $m\gets |T|$
-% \State $U\gets computeU(L)$\Comment{Creo U dall'alfabeto L}\\
-% \For{$i=0\to I \do$}\Comment{Inizializzo M}
-% 	\For{$d=0\to D \do$}
-% 		\For{$k=0\to n \do$}
-% 			\For{$j=0\to m \do$}
-% 				\State $M^{i, d}_{k, j}\gets 0$
-% 			\EndFor
-% 		\EndFor
-% 	\EndFor
-% \EndFor\\
-% \State $M\gets computeM(m, n, 0, 0, M, U)$
-% \For{$i=1\to I \do$}
-% 	\State $M\gets computeM(m, n, i, 0, M, U)$
-% \EndFor
-% \For{$d=1\to D \do$}
-% 	\State $M\gets computeM(m, n, 0, d, M, U)$
-% \EndFor
-% \For{$i=1\to I \do$}
-% 	\For{$d=1\to D \do$}
-% 		\State $M\gets computeM(m, n, i, d, M, U)$
-% 	\EndFor
-% \EndFor\\
-% \State $index\gets 0$
-% \For{$l=0 \to m \do$}
-% 	\If{$M^{i, d}_{l, n-1} == 1$}\Comment{Controllo nell'ultima colonna}
-% 		\State $indexes[index]\gets l-n$\Comment{Salvo la posizione di un occorrenza}
-% 		\State $index\gets index + 1$
-% 	\EndIf
-% \EndFor\\
-% \State \Return $indexes$
-% \EndProcedure
-% \end{algorithmic}
-% \end{algorithm}
-% Computeremo tutte le matrici con $ShiftAnd(T, P, 2, 2)$. Mostriamo un esempio.
-% \[M^{0, 0} =
-% \begin{bmatrix}
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 0 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 1 & 0 & 0 & 0\\
-% 0 & 1 & 0 & 1 & 0 & 0\\
-% 1 & 0 & 1 & 0 & 1 & 0\\
-% 0 & 0 & 0 & 0 & 0 & 1\\
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0
-% \end{bmatrix}
-% M^{1, 0} =
-% \begin{bmatrix}
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 0 & 1 & 0 & 1 & 1\\
-% 0 & 0 & 0 & 0 & 0 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0
-% \end{bmatrix}
-% M^{2, 0} =
-% \begin{bmatrix}
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 0 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 0 & 1 & 0 & 1 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0
-% \end{bmatrix}
-% \]
-% \[M^{0, 1} =
-% \begin{bmatrix}
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0
-% \end{bmatrix}
-% M^{1, 1} =
-% \begin{bmatrix}
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 0 & 0 & 0 & 0 & 1\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0
-% \end{bmatrix}
-% M^{2, 1} =
-% \begin{bmatrix}
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 0 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 0 & 1 & 1\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0
-% \end{bmatrix}
-% \]
-% \[M^{0, 2} =
-% \begin{bmatrix}
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 0 & 0 & 0 & 1\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0
-% \end{bmatrix}
-% M^{1, 2} =
-% \begin{bmatrix}
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 0 & 0 & 0 & 1\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0
-% \end{bmatrix}
-% M^{2, 2} =
-% \begin{bmatrix}
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 0 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 0\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 1 & 1 & 1\\
-% 1 & 1 & 1 & 0 & 0 & 0\\
-% 1 & 1 & 1 & 1 & 0 & 0
-% \end{bmatrix}
-% \]
-% Nel caso pi\`u semplice con 0 errori abbiamo un match tra T e P in $M^{0, 0}_{7, 5}$ e cos\`i via.
-% Nel caso in cui accettiamo al massimo 2 cancellazioni e 2 inserimenti, accettiamo oltre a $M^{2, 2}_{7, 5}$ anche:
-% \begin{itemize}
-% \item $M^{2, 2}_{5, 5}$ caso di match nel caso di 2 errori di cancellazione
-% \item $M^{2, 2}_{6, 5}$ caso di match nel caso di 1 errore di cancellazione 
-% \item $M^{2, 2}_{8, 5}$ caso di match nel caso di 1 errore di inserimento
-% \item $M^{2, 2}_{9, 5}$ caso di match nel caso di 2 errori di inserimento
-% \end{itemize}
-% 
-% \newpage
-% \section{Esercizio 5}
-% {\bf Testo:} Descrivere un possibile algoritmo di ricerca, basato su automa a stati finiti, che risolve il
-% seguente problema: data in input una parola $w$ e un testo $T$, trova la prima occorrenza in $T$ di un 
-% tandem repeat della forma $ww$.\\\\
-% {\bf Soluzione:} Per risolvere il problema costruisco la funzione di transizione: \[\delta(m, n): v\]
-% dove m \`e lo stato attuale, n \`e il carattere del testo che viene processato e v \`e lo stato risultante. Quando v sar\`a
-% uguale alla lunghezza del pattern allora avremo trovato un match, in questo caso come pattern avremo la stringa w
-% concatenata con se stessa (ww) e ci fermeremo la prima volta che \[\delta(m, n) == v \textrm{ dove } v = |ww|\]
-% ovvero al primo match restituisco l'indice della prima lettera della prima occorrenza nel testo T. In input viene anche messo $\Sigma$ che \`e l'alfabeto scelto.
-% \begin{algorithm}[H]
-% \caption{Costruisco la funzione di transizione} 
-% \begin{algorithmic}
-% \Procedure{$Build-\delta$}{$P, \Sigma$}
-% 	\State $m\gets |P|$
-% 	\ForAll {$c \in \Sigma \do$}
-% 		\State $\delta(0, c)\gets 0$
-% 	\EndFor
-% 	\For {$i = 1 \to m \do$}
-% 		\State $s\gets \delta(i-1, P[i])$
-% 		\State $\delta(i-1, P[i])\gets i$
-% 		\ForAll {$c \in \Sigma \do$}
-% 			\State $\delta(i, c)\gets \delta(s,c)$
-% 		\EndFor
-% 	\EndFor
-% \EndProcedure
-% \end{algorithmic}
-% \end{algorithm}
-% \begin{algorithm}[H]
-% \caption{Trovo la prima occorrenza del mio pattern ww}
-% \begin{algorithmic}
-% \Procedure{$FoccTandemRepeat$}{$T,w,\Sigma$}
-% 	\State $ww\gets w+w$
-% 	\State $m\gets |ww|$
-% 	\State $n\gets |T|$
-% 	\State $\delta\gets Build-\delta(ww, \Sigma)$
-% 	\State $i\gets 0$
-% 	\For {$p = 1 \to n \do$}
-% 		\State $i\gets \delta(i, T[p])$
-% 		\If {$i == m$}
-% 			\State \Return $p-m+1$\Comment{Restituisco l'indice della prima occ.}
-% 		\EndIf
-% 	\EndFor
-% 	\State \Return $-1$\Comment{Restituisco -1 nel caso in cui non ho trovato occorrenze}
-% \EndProcedure
-% \end{algorithmic}
-% \end{algorithm}
-% 
-% \end{document}
-% This is never printed
