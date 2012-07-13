@@ -2,6 +2,8 @@ import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorConvertOp;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -16,7 +18,9 @@ public class Main {
 		//frame.getContentPane().add(image);
 		//frame.setVisible(true);
 		
-		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/";
+		PrintWriter out = new PrintWriter(new FileWriter("/home/simon/projects/discrete-cosine-transform/outputfile.txt")); 
+		
+		String src = "/home/simon/projects/discrete-cosine-transform/imgs/";
 		String[] names = {
 				"artificial.bmp",
 				"big_building.bmp",
@@ -34,7 +38,7 @@ public class Main {
 				"spider_web.bmp",
 				"zone_plate.bmp"
 		};
-		for(int i=5; i<names.length; i++) {
+		for(int i=0; i<names.length; i++) {
 			//int x = 500;
 			//int y = 400;
 			//frame.setSize((x+10)*3, y);
@@ -54,7 +58,11 @@ public class Main {
 			
 			double[][] pixels = PanelImage.getPixels(secondImage);
 			
-			System.out.println("get pixels, now calculate dct2 on "+names[i]);
+			out.println("get pixels, now calculate dct2 on "+names[i]);
+			out.flush();
+			
+			out.println("ciao");
+			out.flush();
 			
 			double offset = -128.;
 			
@@ -62,7 +70,8 @@ public class Main {
 			double[][] result = Dct.dct2(pixels, offset);
 			long endS =  new Date().getTime();
 			
-			System.out.println("time on my dct2: "+(endS-startS));
+			out.println("time on my dct2: "+(endS-startS));
+			out.flush();
 			
 			//System.out.println("now dct2, now calculate idct2");
 			
@@ -83,43 +92,10 @@ public class Main {
 			dct_2d.forward(pixels, true);
 			long endO = new Date().getTime();
 			
-			System.out.println("time on jtransform dct2: "+(endO-startO));
+			out.println("time on jtransform dct2: "+(endO-startO));
+			out.flush();
 		}
 		
-		System.out.println("------------------------------------------------------");
-		
-		src = "/home/simon/projects/discrete-cosine-transform/imgs/";
-		
-		for(int i=0; i<names.length; i++) {
-			
-			String input = src+names[i];
-			
-			BufferedImage firstimage = ImageIO.read(new File(input)); 
-			
-			ColorSpace cs = ColorSpace.getInstance(ColorSpace.CS_GRAY);  
-			ColorConvertOp op = new ColorConvertOp(cs, null);  
-			BufferedImage secondImage = op.filter(firstimage, null);
-			
-			double[][] pixels = PanelImage.getPixels(secondImage);
-			
-			System.out.println("get pixels, now calculate dct2 on "+names[i]);
-			
-			double offset = -128.;
-			
-			long startS = new Date().getTime();
-			double[][] result = Dct.dct2(pixels, offset);
-			long endS =  new Date().getTime();
-			
-			System.out.println("time on my dct2: "+(endS-startS));
-			
-			int n = pixels.length;
-			int m = pixels[0].length;
-			long startO = new Date().getTime();
-			DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
-			dct_2d.forward(pixels, true);
-			long endO = new Date().getTime();
-			
-			System.out.println("time on jtransform dct2: "+(endO-startO));
-		}
+		out.close();
 	}
 }

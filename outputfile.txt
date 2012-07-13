@@ -1,0 +1,2 @@
+get pixels, now calculate dct2 on artificial.bmp
+ciao
