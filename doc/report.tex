@@ -49,7 +49,8 @@
 
 \begin{table}
 \begin{tabular}{|l|r|r|r|r|r|}
-TEST         &	ERRORE RELATIVO  &	ERRORE PRIMA COMP  & AUTOVALORE N 7    &	TIME TO SOLVE &	TIME TO EIGEN \\
+\hline
+Test         &	Errore Relativo  &	Errore Prima Comp  & Autovalore n.7    &	Time to solve &	Time to calc. eigen \\
 \hline
      easy-10 &	    3.510833e-16 &	      2.220446e-16 &           7.000000 & 	0ms		 	 &		0ms   \\
     easy-100 &	    2.853360e-15 &	      1.110223e-15 &           7.000000 & 	1ms		 	 &		0ms   \\
@@ -75,6 +76,7 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
     eig-1000 &	            n.a. &	              n.a. &           0.005791 & 	0ms		 &			7ms   \\
     eig-2000 &	            n.a. &	              n.a. &           0.004094 & 	0ms		&			30ms   \\
     eig-5000 &	            n.a. &	              n.a. &           0.001635 &	0ms		&			967ms   \\
+\hline
 \end{tabular}
 \end{table}
 
@@ -88,5 +90,57 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
 \lstinputlisting[caption=discrete-cosine-transform,label=lst:java]{../src/Dct.java}
 
 \subsection{Risultati e conclusioni}
+
+\begin{table}
+\begin{tabular}{|l|r|r|r|r|}
+name & time\_dct2 (ms) & time\_jtransform (ms) & width (px) & height (px) \\ 
+\hline
+scaled/scaled/scaled/artificial.bmp & 7942 & 193 & 384 & 256 \\ 
+scaled/scaled/scaled/big\_building.bmp & 127478 & 783 & 902 & 677 \\ 
+scaled/scaled/scaled/big\_tree.bmp & 81907 & 383 & 761 & 569 \\ 
+scaled/scaled/scaled/bridge.bmp & 19125 & 316 & 344 & 507 \\ 
+scaled/scaled/scaled/cathedral.bmp & 7479 & 79 & 250 & 376 \\ 
+scaled/scaled/scaled/deer.bmp & 18021 & 118 & 506 & 331 \\ 
+scaled/scaled/scaled/fireworks.bmp & 10058 & 19 & 392 & 294 \\ 
+scaled/scaled/scaled/flower\_foveon.bmp & 3284 & 18 & 284 & 189 \\ 
+scaled/scaled/scaled/hdr.bmp & 7875 & 40 & 384 & 256 \\ 
+scaled/scaled/scaled/leaves\_iso\_200.bmp & 7438 & 10 & 376 & 250 \\ 
+scaled/scaled/scaled/leaves\_iso\_1600.bmp & 7551 & 10 & 376 & 250 \\ 
+scaled/scaled/scaled/nightshot\_iso\_100.bmp & 10080 & 33 & 392 & 294 \\ 
+scaled/scaled/scaled/nightshot\_iso\_1600.bmp & 10245 & 10 & 392 & 294 \\ 
+scaled/scaled/scaled/spider\_web.bmp & 22486 & 38 & 532 & 356 \\ 
+scaled/scaled/scaled/zone\_plate.bmp & 7588 & 8 & 375 & 250 \\ 
+scaled/scaled/artificial.bmp & 66245 & 534 & 768 & 512 \\ 
+scaled/scaled/big\_building.bmp & 1135163 & 2639 & 1804 & 1354 \\ 
+scaled/scaled/big\_tree.bmp & 597656 & 1731 & 1522 & 1138 \\ 
+scaled/scaled/bridge.bmp & 157433 & 650 & 688 & 1014 \\ 
+scaled/scaled/cathedral.bmp & 60869 & 118 & 500 & 752 \\ 
+scaled/scaled/deer.bmp & 151674 & 335 & 1012 & 662 \\ 
+scaled/scaled/fireworks.bmp & 82743 & 82 & 784 & 588 \\ 
+scaled/scaled/flower\_foveon.bmp & 25788 & 17 & 568 & 378 \\ 
+scaled/scaled/hdr.bmp & 63813 & 125 & 768 & 512 \\ 
+scaled/scaled/leaves\_iso\_200.bmp & 60658 & 527 & 752 & 500 \\ 
+scaled/scaled/leaves\_iso\_1600.bmp & 61871 & 68 & 752 & 500 \\ 
+scaled/scaled/nightshot\_iso\_100.bmp & 82330 & 111 & 784 & 588 \\ 
+scaled/scaled/nightshot\_iso\_1600.bmp & 111011 & 59 & 784 & 588 \\ 
+scaled/scaled/spider\_web.bmp & 207638 & 161 & 1064 & 712 \\ 
+scaled/scaled/zone\_plate.bmp & 60285 & 29 & 750 & 500 \\ 
+scaled/artificial.bmp & 518198 & 535 & 1536 & 1024 \\ 
+scaled/big\_building.bmp & 8364020 & 7823 & 3608 & 2708 \\ 
+scaled/big\_tree.bmp & 4872149 & 3647 & 3044 & 2276 \\ 
+scaled/bridge.bmp & 1369571 & 411 & 1376 & 2028 \\ 
+scaled/cathedral.bmp & 540372 & 267 & 1000 & 1504 \\ 
+scaled/deer.bmp & 1151979 & 2690 & 2024 & 1324 \\ 
+scaled/fireworks.bmp & 658911 & 568 & 1568 & 1176 \\ 
+scaled/flower\_foveon.bmp & 267050 & 155 & 1136 & 756 \\ 
+scaled/hdr.bmp & 585721 & 469 & 1536 & 1024 \\ 
+scaled/leaves\_iso\_200.bmp & 525412 & 335 & 1504 & 1000 \\ 
+scaled/leaves\_iso\_1600.bmp & 540518 & 256 & 1504 & 1000 \\ 
+scaled/nightshot\_iso\_100.bmp & 727666 & 227 & 1568 & 1176 \\ 
+scaled/nightshot\_iso\_1600.bmp & 720260 & 225 & 1568 & 1176 \\ 
+scaled/spider\_web.bmp & 1416648 & 1079 & 2128 & 1424 \\ 
+scaled/zone\_plate.bmp & 491263 & 408 & 1500 & 1000
+\end{tabular}
+\end{table}
 
 \end{document}

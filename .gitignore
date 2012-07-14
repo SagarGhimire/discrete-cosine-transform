@@ -2,3 +2,4 @@ bin/*
 doc/*~
 doc/*.aux
 doc/*.log
+*swp

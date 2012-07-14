@@ -1,6 +1,0 @@
-get pixels, now calculate dct2 on artificial.bmp
-ciao
-time on my dct2: 4179433
-time on jtransform dct2: 1371
-get pixels, now calculate dct2 on big_building.bmp
-ciao
