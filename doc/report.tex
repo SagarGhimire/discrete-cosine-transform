@@ -5,15 +5,17 @@
 }
 \date{\today}
 
-% TODO [LD] scrivere una relazione che riporti un minimo di teoria
-% TODO [LD] i listati dei programmi
-% TODO [LD] gli esperimenti
-% TODO [LD] le vostre considerazioni
+% TODO [LD] teoria
+% OK [LD] jtransform
+% OK [LD] i listati dei programmi
+% OK [LD] risultati
+% OK [LD] conclusioni
 
-% TODO [DCT2] scrivere una relazione che riporti un minimo di teoria
-% TODO [DCT2] i listati dei programmi
-% TODO [DCT2] gli esperimenti
-% TODO [DCT2] le vostre considerazioni
+% TODO [DCT2] teoria
+% OK [DCT2] jtransform
+% OK [DCT2] i listati dei programmi
+% OK [DCT2] risultati
+% OK [DCT2] conclusioni
 
 \documentclass[12pt]{article}
 \usepackage[margin=1.5cm]{geometry}
@@ -41,13 +43,72 @@
 \subsection{Teoria}
 
 \subsection{Jama}
+JAMA \`e un pacchetto di algebra lineare di base per Java. Fornisce le classi a livello di utente per la costruzione e la manipolazione di matrici reali, dense. \`E pensato per fornire funzionalit\`a sufficienti per problemi di routine, confezionati in un modo tale che sia naturale e comprensibile anche ai non esperti. \\
+\\
+Sono disponibili cinque scomposizioni fondamentali della matrice JAMA:
+\begin{itemize}
+\item La decomposizione di Cholesky, matrici simmetriche definite positive
+\item Decomposizione LU (eliminazione gaussiana) di matrici rettangolari (Quella che usiamo in questo caso)
+\item Decomposizione QR di matrici rettangolari
+\item Decomposizione autovalore di matrici quadrate e simmetriche sia nonsymmetric
+\item Valore Singolare decomposizione di matrici rettangolari
+\end{itemize}
+Funzionalit\`a non coperte: JAMA non \`e affatto un ambiente completo algebra lineare. Per esempio, non supporta matrici con struttura particolare o per ulteriori decomposizioni specializzati (ad esempio Shur, autovalore generalizzato). Matrici complesse non sono incluse. \\
 
 \subsection{Programma lu-decomposition}
+Per il progetto ho deciso di utilizzare Jama, perch\`e sembra essere veloce e semplice da implementare, alla fine non mi ha deluso, tranne forse il fatto che non supporta i valori complessi e non ho potuto calcolare gli autovalori delle matrici rand, che ho lasciato ad n.a.\\
+Qui \`e listato il programma principale.
+
+\newpage
 \lstinputlisting[caption=lu-decompostion,label=lst:java]{../../lu-decomposition/src/Main.java}
 
-\subsection{Risultati e conclusioni}
+\newpage
 
-\begin{table}
+\subsection{Risultati e conclusioni}
+Qui presentiamo i valori dei test precedenti con cui dovremmo confrontare i valori ottenuti.\\
+Come vediamo quando viene calcolato l'errore relativo e l'errore sulla prima componente, manteniamo lo stesso ordine di grandezza nella maggior parte di casi, perdiamo o guadagniamo un ordine di grandezza nel caso di matrici bad e very bad. \\
+Nel caso del calcolo del settimo autovalore i risultati sono praticamente gli stessi. \\
+Nei valori ottenuti abbiamo aggiunto due colonne: Time to solve che \`e il tempo di calcolo della lu-decomposition e il tempo di calcolo degli autovalori. \\
+Come vediamo entrambi i tempi si matengono bassi tranne nel caso di rand-5000 per il tempo di calcolo della lu-decomposition e eig-5000 nel caso del calcolo degli autovalori. \\
+
+\begin{table}[h]
+\caption {Valori dei test precedenti} \label{tab:title}
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+\hline
+Test         &	Errore Relativo  &	Errore Prima Comp  & Autovalore n.7 \\
+\hline
+     easy-10 &	    4.242156e-016 &	     6.661338e-016 &  				 7.000000 \\
+    easy-100 &	    2.019904e-015 &	     3.330669e-015 &           7.000000 \\
+   easy-1000 &	    2.654198e-014 &	     1.554312e-014 &           7.000000 \\
+     rand-10 &	    5.607561e-015  &	   1.132427e-014 &               n.a. \\
+    rand-100 &	    8.760746e-014 &	     2.065015e-014 &               n.a. \\
+   rand-1000 &	     3.827585e-012 &	   5.317968e-013 &               n.a. \\
+   rand-5000 &	   1.102259e-011   &	   1.227463e-012 &               n.a. \\
+      bad-10 &	    6.287577e-007  &	   4.387160e-007 &           5.999999 \\
+     bad-100 &	    9.304715e-006 &	     9.864899e-006 &           6.000000 \\
+     bad-500 &	    8.763526e-005 &	     8.822490e-005 &           5.999999 \\
+    bad-1000 &	    7.556303e-005 &	     7.484208e-005 &           5.999999 \\
+  verybad-10 &	    5.264102e-005 &	     4.405734e-005 &           6.000000 \\
+ verybad-100 &	    1.197916e-003 &	     1.140304e-003 &           6.000000 \\
+ verybad-500 &	    2.451563e-003 &	     2.454550e-003 &           6.000000  \\
+verybad-1000 &	    1.921933e-002 &	     1.907311e-002 &           6.000000 \\
+      eig-10 &	            n.a. &	              n.a. &           1.212788 \\
+      eig-20 &	            n.a. &	              n.a. &           0.616452  \\
+      eig-30 &	            n.a. &	              n.a. &           0.386165 \\
+      eig-40 &	            n.a. &	              n.a. &           0.251158  \\
+      eig-50 &	            n.a. &	              n.a. &           0.183589  \\
+     eig-100 &	            n.a. &	              n.a. &           0.105820 \\
+    eig-1000 &	            n.a. &	              n.a. &           0.005791 \\
+    eig-2000 &	            n.a. &	              n.a. &           0.004094 \\
+    eig-5000 &	            n.a. &	              n.a. &           0.001635 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[h]
+\caption {Valori Ottenuti} \label{tab:title}
+\begin{center}
 \begin{tabular}{|l|r|r|r|r|r|}
 \hline
 Test         &	Errore Relativo  &	Errore Prima Comp  & Autovalore n.7    &	Time to solve &	Time to calc. eigen \\
@@ -78,22 +139,52 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
     eig-5000 &	            n.a. &	              n.a. &           0.001635 &	0ms		&			967ms   \\
 \hline
 \end{tabular}
+\end{center}
 \end{table}
 
+\newpage
+
 \section{Discrete Cosine Transform}
-
 \subsection{Teoria}
-
-\subsection{JTransform}
+\subsection{JTransforms}
+JTransforms \`e la prima, open source, multithreaded libreria FFT scritta in puro Java. Attualmente, quattro tipi di trasformazioni sono disponibili: Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Discrete Sine Transform (DST) e Discrete Hartley Transform (DHT).\\
+\\
+Caratteristiche:
+\begin{itemize}
+\item L'implementazione pi\`u veloce di DFT, DCT, DST e DHT in puro Java.
+\item trasformazioni a 1, 2 e 3 dimensioni
+\item Dimensione arbitraria dei dati.
+\item Singola e doppia precisione.
+\item Varianti Uni-dimensionale e multi-dimensionale di trasformazioni 2D e 3D.
+\item Multithreading automatico - i thread sono utilizzati automaticamente se il numero di CPU > 1.
+\item FFT ottimizzate per i dati di input reali (40\% pi\`u veloce che con i dati complessi).
+\end{itemize}
+Limitazioni:
+\begin{itemize}
+\item Il numero di thread deve essere una potenza di due.
+\item Sono disponibili solo in-place trasformazioni.
+\item Solo DCT-II-III e DCT sono disponibili.
+\item Solo DST-II-III e DST sono disponibili.
+\item Solo DHT reale \`e disponibile.
+\end{itemize}
 
 \subsection{Programma discrete-cosine-transform}
+Per il progetto ho deciso di utilizzare JTransforms come implementazione FAST.\\
+Qui \`e listato della classe che gestisce la mia implementazione di dct sia unidemensionale che bidimensionale.
+
 \lstinputlisting[caption=discrete-cosine-transform,label=lst:java]{../src/Dct.java}
 
 \subsection{Risultati e conclusioni}
+Nella tabella riportata qui sotto ho messo i risultati dei benchmark sia della mia implementazione che di Jtransforms.
+Notiamo la grande differenza nei tempi di computazione sia dovuta al fatto che Jtransforms utilizza multithread sia anche per l'implementazione FAST.
+\\\\
+DOMANDA: Qui o dopo la tabella vorrei posizionare un grafico in funzione di width, height e t e mostrare come varia time Dct2 e Time Jt., pu\`o
+essere significativo?
 
-\begin{table}
+\begin{table}[!h]
 \begin{tabular}{|l|r|r|r|r|}
-name & time\_dct2 (ms) & time\_jtransform (ms) & width (px) & height (px) \\ 
+\hline
+Name & Time Dct2 (ms) & Time Jt. (ms) & width (px) & height (px) \\ 
 \hline
 scaled/scaled/scaled/artificial.bmp & 7942 & 193 & 384 & 256 \\ 
 scaled/scaled/scaled/big\_building.bmp & 127478 & 783 & 902 & 677 \\ 
@@ -139,7 +230,8 @@ scaled/leaves\_iso\_1600.bmp & 540518 & 256 & 1504 & 1000 \\
 scaled/nightshot\_iso\_100.bmp & 727666 & 227 & 1568 & 1176 \\ 
 scaled/nightshot\_iso\_1600.bmp & 720260 & 225 & 1568 & 1176 \\ 
 scaled/spider\_web.bmp & 1416648 & 1079 & 2128 & 1424 \\ 
-scaled/zone\_plate.bmp & 491263 & 408 & 1500 & 1000
+scaled/zone\_plate.bmp & 491263 & 408 & 1500 & 1000 \\
+\hline
 \end{tabular}
 \end{table}
 
