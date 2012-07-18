@@ -27,6 +27,8 @@ public class Main {
 		
 		for(int i=0; i<names.length; i++) {
 			String input = src+names[i];
+			out.println("read: "+input);
+			out.flush();
 			new CreateImage(input, offset, out, true);
 		}
 		

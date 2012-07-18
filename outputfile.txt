@@ -1,0 +1,1 @@
+read: /home/simon/projects/discrete-cosine-transform/imgs/artificial.bmp

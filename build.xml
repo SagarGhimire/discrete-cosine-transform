@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="create_run_jar" name="Create Runnable Jar for Project discrete-cosine-transform">
-    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
-    <!--ANT 1.7 is required                                        -->
-    <target name="create_run_jar">
-        <jar destfile="main.jar" filesetmanifest="mergewithoutmain">
-            <manifest>
-                <attribute name="Main-Class" value="Main"/>
-                <attribute name="Class-Path" value="."/>
-            </manifest>
-            <fileset dir="bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="jtransforms-2.4.jar"/>
-        </jar>
-    </target>
+	<target name="compile">
+		<javac  srcdir="src" destdir="bin" debug="on">
+			<include name="**/*.java" />
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+					<exclude name="${stubs.jar.name}" />
+					<exclude name="${jar.name}" />
+				</fileset>
+			</classpath>
+		</javac>
+		<!-- copy toDir="${stubs.global.dest}" overwrite="true">
+			<fileset dir="${stubs.dest}"/>	
+		</copy -->
+	</target>
+
+    	<target name="create_run_jar" depends="compile">
+        	<jar destfile="main.jar" filesetmanifest="mergewithoutmain">
+	            <manifest>
+        	        <attribute name="Main-Class" value="Main"/>
+	                <attribute name="Class-Path" value="."/>
+        	    </manifest>
+	            <fileset dir="bin"/>
+	            <zipfileset excludes="META-INF/*.SF" src="lib/jtransforms-2.4.jar"/>
+        	</jar>
+	</target>
 </project>
