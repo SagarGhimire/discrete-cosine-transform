@@ -8,8 +8,6 @@ public class Main {
 		String src = "/home/simon/projects/discrete-cosine-transform/imgs/";
 		String[] names = {
 				"artificial.bmp",
-				"big_building.bmp",
-				"big_tree.bmp",
 				"bridge.bmp",
 				"cathedral.bmp",
 				"deer.bmp",
@@ -21,11 +19,13 @@ public class Main {
 				"nightshot_iso_100.bmp",
 				"nightshot_iso_1600.bmp",
 				"spider_web.bmp",
-				"zone_plate.bmp"
+				"zone_plate.bmp",
+				"big_building.bmp",
+				"big_tree.bmp"
 		};
 		double offset = -128.;
 		
-		for(int i=0; i<names.length; i++) {
+		for(int i=3; i<names.length; i++) {
 			String input = src+names[i];
 			out.println("read: "+input);
 			out.flush();
