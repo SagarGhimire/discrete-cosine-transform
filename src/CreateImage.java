@@ -37,14 +37,18 @@ public class CreateImage {
 				
 				debug.println("time on my dct2: "+(endS-startS));
 				
-				int n = pixels.length;
-				int m = pixels[0].length;
-				long startO = new Date().getTime();
-				DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
-				dct_2d.forward(pixels, true);
-				long endO = new Date().getTime();
+//				int n = pixels.length;
+//				int m = pixels[0].length;
+//				long startO = new Date().getTime();
+//				DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
+//				dct_2d.forward(pixels, true);
+//				long endO = new Date().getTime();
 				
-				debug.println("time on jtransform dct2: "+(endO-startO));
+//				debug.println("time on jtransform dct2: "+(endO-startO));
+
+				result = Dct.filter(result, 1.0);
+				
+				debug.println("filtered");
 				
 				double[][] newPixels = Dct.idct2(result, -1*offset);
 				secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);

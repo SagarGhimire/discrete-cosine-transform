@@ -217,6 +217,28 @@ public class Dct {
 
   return c2;
  }
+ 
+ public static double[][] filter(double[][] z, double threshold)
+	 throws Exception {
+		  if (z.length == 0)
+		   throw new Exception("z empty");
+
+		  if (z[0].length == 0)
+		   throw new Exception("z row empty");
+
+		  int n = z.length;
+		  int m = z[0].length;
+		  
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				if(Math.abs(z[i][j]) < threshold) {
+					z[i][j] = 0.0;
+				}
+			}
+		}
+		  
+		return z;
+ }
 
  /*
   * test from example 1
@@ -241,8 +263,13 @@ public class Dct {
 
   System.out.println("dct2 result: ");
   printMatrix(result);
-
+  
   System.out.println("time: " + (endS - startS));
+  
+  result = filter(result, 1.0);
+  
+  System.out.println("dct2 filtered: ");
+  printMatrix(result);
 
   double[][] ivals = idct2(result, -offset);
   System.out.println("idct2 result: ");
@@ -266,7 +293,9 @@ public class Dct {
   System.out.println("time: " + (endO - startO));
  }
  
- /*
+ 
+
+/*
   * test from example 2
   * 
   * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% esempio 2 
@@ -316,6 +345,11 @@ public class Dct {
   printMatrix(result);
 
   System.out.println("time: " + (endS - startS));
+  
+  result = filter(result, 1.0);
+  
+  System.out.println("dct2 filtered: ");
+  printMatrix(result);
 
   double[][] ivals = idct2(result, -offset);
   System.out.println("idct2 result: ");
@@ -367,6 +401,11 @@ public class Dct {
   printMatrix(result);
 
   System.out.println("time: " + (endS - startS));
+  
+  result = filter(result, 1.0);
+  
+  System.out.println("dct2 filtered: ");
+  printMatrix(result);
 
   double[][] ivals = idct2(result, -offset);
   System.out.println("idct2 result: ");
