@@ -29,6 +29,7 @@
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \usepackage{listings}
 \lstset{language=Java, basicstyle=\small}
@@ -178,9 +179,18 @@ Qui \`e listato della classe che gestisce la mia implementazione di dct sia unid
 Nella tabella riportata qui sotto ho messo i risultati dei benchmark sia della mia implementazione che di Jtransforms.
 Notiamo la grande differenza nei tempi di computazione sia dovuta al fatto che Jtransforms utilizza multithread sia anche per l'implementazione FAST.
 \\\\
-DOMANDA: Qui o dopo la tabella vorrei posizionare un grafico in funzione di width, height e t e mostrare come varia time Dct2 e Time Jt., pu\`o
-essere significativo?
-
+\begin{figure}[htbp]
+\centering
+\includegraphics{grafico_dct2.eps}
+\caption{Grafico dct2 implementata}
+\end{figure}
+\\\\
+\begin{figure}[htbp]
+\centering
+\includegraphics{grafico_jtransform.eps}
+\caption{Grafico dct2 FAST}
+\end{figure}
+\\\\
 \begin{table}[!h]
 \begin{tabular}{|l|r|r|r|r|}
 \hline
