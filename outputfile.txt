@@ -1,1 +1,6 @@
 read: /home/simon/projects/discrete-cosine-transform/imgs/artificial.bmp
+time on my dct2: 7819210
+filtered at 0.75
+filtered at 0.50
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/bridge.bmp
