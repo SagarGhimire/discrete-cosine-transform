@@ -1,7 +1,1 @@
-read: /home/simon/projects/discrete-cosine-transform/imgs/bridge.bmp
-time on my dct2: 17083183
-time on jtransform dct2: 6842
-read: /home/simon/projects/discrete-cosine-transform/imgs/cathedral.bmp
-time on my dct2: 6362806
-time on jtransform dct2: 1604
-read: /home/simon/projects/discrete-cosine-transform/imgs/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/artificial.bmp

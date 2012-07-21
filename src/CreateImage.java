@@ -18,7 +18,7 @@ public class CreateImage {
 	private BufferedImage secondImage;
 	private BufferedImage thirdImage;
 
-	public CreateImage(String src, double offset, PrintWriter debug, boolean calc) {
+	public CreateImage(String src, double offset, PrintWriter debug) {
 		try {
 			firstimage = ImageIO.read(new File(src));
 		
@@ -28,45 +28,63 @@ public class CreateImage {
 			
 			int divide = 20;
 			
-			if(calc) {
-				double[][] pixels = CreateImage.getPixels(firstimage);
-		
-				long startS = new Date().getTime();
-				double[][] result = Dct.dct2(pixels, offset);
-				long endS =  new Date().getTime();
-				
-				debug.println("time on my dct2: "+(endS-startS));
-				
-//				int n = pixels.length;
-//				int m = pixels[0].length;
-//				long startO = new Date().getTime();
-//				DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
-//				dct_2d.forward(pixels, true);
-//				long endO = new Date().getTime();
-				
-//				debug.println("time on jtransform dct2: "+(endO-startO));
+			double[][] pixels = CreateImage.getPixels(firstimage);
+	
+			long startS = new Date().getTime();
+			double[][] result = Dct.dct2(pixels, offset);
+			long endS =  new Date().getTime();
+			
+			debug.println("time on my dct2: "+(endS-startS));
+			
+//			int n = pixels.length;
+//			int m = pixels[0].length;
+//			long startO = new Date().getTime();
+//			DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
+//			dct_2d.forward(pixels, true);
+//			long endO = new Date().getTime();
+//			debug.println("time on jtransform dct2: "+(endO-startO));
 
-				result = Dct.filter(result, 1.0);
-				
-				debug.println("filtered");
-				
-				double[][] newPixels = Dct.idct2(result, -1*offset);
-				secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
-			} else {
-				secondImage = CreateImage.deepCopy(firstimage);
-			}
+			double[][] filtered = Dct.filter(result, 0.75);
 			
-			thirdImage = new BufferedImage((firstimage.getWidth()*2)+divide, firstimage.getHeight(), BufferedImage.TYPE_INT_RGB);
+			debug.println("filtered at 0.75");
 			
-			Graphics2D g2d = thirdImage.createGraphics();
+			double[][] newPixels = Dct.idct2(filtered, -1*offset);
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+		
+			File file = new File(src+"-result-0.75.jpg");
+			ImageIO.write(secondImage, "jpg", file);
 			
-			g2d.drawImage(firstimage, 0, 0, null);
-			g2d.drawImage(secondImage, firstimage.getWidth()+divide, 0, null);
+			filtered = Dct.filter(result, 0.50);
 			
-			g2d.dispose();
+			debug.println("filtered at 0.50");
 			
-			File file = new File(src+"-result.jpg");
-			ImageIO.write(thirdImage, "jpg", file);
+			newPixels = Dct.idct2(filtered, -1*offset);
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+		
+			file = new File(src+"-result-0.50.jpg");
+			ImageIO.write(secondImage, "jpg", file);
+
+			filtered = Dct.filter(result, 0.25);
+			
+			debug.println("filtered at 0.25");
+			
+			newPixels = Dct.idct2(filtered, -1*offset);
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+		
+			file = new File(src+"-result-0.25.jpg");
+			ImageIO.write(secondImage, "jpg", file);
+	
+//			thirdImage = new BufferedImage((firstimage.getWidth()*2)+divide, firstimage.getHeight(), BufferedImage.TYPE_INT_RGB);
+			
+//			Graphics2D g2d = thirdImage.createGraphics();
+			
+//			g2d.drawImage(firstimage, 0, 0, null);
+//			g2d.drawImage(secondImage, firstimage.getWidth()+divide, 0, null);
+			
+//			g2d.dispose();
+			
+//			File file = new File(src+"-result.jpg");
+//			ImageIO.write(thirdImage, "jpg", file);
 			
 			debug.flush();
 		} catch (Exception e) {

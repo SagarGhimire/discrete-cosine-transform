@@ -229,11 +229,9 @@ public class Dct {
 		  int n = z.length;
 		  int m = z[0].length;
 		  
-		for(int i=0; i<n; i++) {
-			for(int j=0; j<m; j++) {
-				if(Math.abs(z[i][j]) < threshold) {
-					z[i][j] = 0.0;
-				}
+		for(int i=((int) Math.rint(n*threshold)); i<n; i++) {
+			for(int j=((int) Math.rint(m*threshold)); j<m; j++) {
+				z[i][j] = 0.0;
 			}
 		}
 		  
