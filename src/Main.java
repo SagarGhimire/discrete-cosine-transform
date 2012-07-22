@@ -25,7 +25,7 @@ public class Main {
 		};
 		double offset = -128.;
 		
-		for(int i=0; i<names.length; i++) {
+		for(int i=2; i<names.length; i++) {
 			String input = src+names[i];
 			out.println("read: "+input);
 			out.flush();

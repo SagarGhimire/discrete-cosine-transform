@@ -43,15 +43,24 @@ public class CreateImage {
 //			dct_2d.forward(pixels, true);
 //			long endO = new Date().getTime();
 //			debug.println("time on jtransform dct2: "+(endO-startO));
-
-			double[][] filtered = Dct.filter(result, 0.75);
 			
-			debug.println("filtered at 0.75");
+			double[][] filtered = Dct.filter2(result);
+			
+			debug.println("filtered2");
 			
 			double[][] newPixels = Dct.idct2(filtered, -1*offset);
 			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
 		
-			File file = new File(src+"-result-0.75.jpg");
+			File file = new File(src+"-result-f2.jpg");
+			ImageIO.write(secondImage, "jpg", file);
+
+			filtered = Dct.filter(result, 0.75);			
+			debug.println("filtered at 0.75");
+	
+			newPixels = Dct.idct2(filtered, -1*offset);
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+		
+			file = new File(src+"-result-0.75.jpg");
 			ImageIO.write(secondImage, "jpg", file);
 			
 			filtered = Dct.filter(result, 0.50);

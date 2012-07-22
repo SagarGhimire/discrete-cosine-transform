@@ -237,6 +237,26 @@ public class Dct {
 		  
 		return z;
  }
+ 
+ public static double[][] filter2(double[][] z)
+	 throws Exception {
+		  if (z.length == 0)
+		   throw new Exception("z empty");
+
+		  if (z[0].length == 0)
+		   throw new Exception("z row empty");
+
+		  int n = z.length;
+		  int m = z[0].length;
+		  
+		for(int i=((int) n/2+1); i<n; i++) {
+			for(int j=((int) m/2+1); j<m; j++) {
+				z[i][j] = 0.0;
+			}
+		}
+		  
+		return z;
+ }
 
  /*
   * test from example 1
