@@ -1,11 +1,6 @@
-import java.io.FileWriter;
-import java.io.PrintWriter;
-
 public class Main {
 	public static void main(String[] args) throws Exception {
-		PrintWriter out = new PrintWriter(new FileWriter("/home/simon/projects/discrete-cosine-transform/outputfile.txt")); 
-		
-		String src = "/home/simon/projects/discrete-cosine-transform/imgs/";
+		String src = "/home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/";
 		String[] names = {
 				"artificial.bmp",
 				"bridge.bmp",
@@ -25,13 +20,12 @@ public class Main {
 		};
 		double offset = -128.;
 		
-		for(int i=2; i<names.length; i++) {
+		for(int i=0; i<names.length; i++) {
 			String input = src+names[i];
-			out.println("read: "+input);
-			out.flush();
-			new CreateImage(input, offset, out);
+			System.out.println("read: "+input);
+			new CreateImage(input, offset);
 		}
 		
-		out.close();
+		System.out.println("finish!");
 	}
 }

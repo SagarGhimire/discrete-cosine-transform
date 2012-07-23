@@ -220,42 +220,27 @@ public class Dct {
  
  public static double[][] filter(double[][] z, double threshold)
 	 throws Exception {
-		  if (z.length == 0)
-		   throw new Exception("z empty");
+  if (z.length == 0)
+   throw new Exception("z empty");
 
-		  if (z[0].length == 0)
-		   throw new Exception("z row empty");
+  if (z[0].length == 0)
+   throw new Exception("z row empty");
 
-		  int n = z.length;
-		  int m = z[0].length;
-		  
-		for(int i=((int) Math.rint(n*threshold)); i<n; i++) {
-			for(int j=((int) Math.rint(m*threshold)); j<m; j++) {
-				z[i][j] = 0.0;
-			}
-		}
-		  
-		return z;
- }
- 
- public static double[][] filter2(double[][] z)
-	 throws Exception {
-		  if (z.length == 0)
-		   throw new Exception("z empty");
+  int n = z.length;
+  int m = z[0].length;
 
-		  if (z[0].length == 0)
-		   throw new Exception("z row empty");
-
-		  int n = z.length;
-		  int m = z[0].length;
-		  
-		for(int i=((int) n/2+1); i<n; i++) {
-			for(int j=((int) m/2+1); j<m; j++) {
-				z[i][j] = 0.0;
-			}
-		}
-		  
-		return z;
+  int i=((int) Math.rint(n*threshold));
+  int j=((int) Math.rint(m*threshold));
+  
+  System.out.println(i+" "+n+" <-> "+j+" "+m);
+  
+  for(; i<n; i++) {
+	for(; j<m; j++) {
+		z[i][j] = 0.0;
+	}
+  }
+  
+  return z;
  }
 
  /*
@@ -364,7 +349,7 @@ public class Dct {
 
   System.out.println("time: " + (endS - startS));
   
-  result = filter(result, 1.0);
+  result = filter(result, 0.25);
   
   System.out.println("dct2 filtered: ");
   printMatrix(result);
@@ -420,7 +405,7 @@ public class Dct {
 
   System.out.println("time: " + (endS - startS));
   
-  result = filter(result, 1.0);
+  result = filter(result, 0.25);
   
   System.out.println("dct2 filtered: ");
   printMatrix(result);
@@ -448,11 +433,11 @@ public class Dct {
  }
 
  public static void main(String[] args) throws Exception {
-  System.out.println("TEST1");
-  test1();
+  //System.out.println("TEST1");
+  //test1();
   System.out.println("\nTEST2");
   test2();
-  System.out.println("\nTEST3");
-  test3();
+  //System.out.println("\nTEST3");
+  //test3();
  }
 }

@@ -5,7 +5,7 @@
 }
 \date{\today}
 
-% TODO [LD] teoria
+% OK [LD] teoria
 % OK [LD] jtransform
 % OK [LD] i listati dei programmi
 % OK [LD] risultati
@@ -30,8 +30,6 @@
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{graphicx}
-
 \usepackage{listings}
 \lstset{language=Java, basicstyle=\small}
 \lstset{linewidth=\textwidth, showstringspaces=false}
@@ -43,9 +41,23 @@
 \section{Lu Decomposition}
 
 \subsection{Teoria}
+Sia A una matrice invertibile. Allora A pu\`o essere decomposta come
+\begin{center} $\mathbf{PA} = \mathbf{LU}$ \end{center}
+dove P \`e una matrice di permutazione, L \`e una matrice triangolare inferiore a diagonale unitaria ($l_{ii} = 1, \forall i$) e U \'e una matrice triangolare superiore. \\\\
+La decomposizione LU \`e simile all'algoritmo di Gauss. Nell'eliminazione gaussiana si prova a risolvere l'equazione matriciale
+\begin{center} $\mathbf{A} \mathbf{x} = \mathbf{b}$ \end{center}
+Il processo di eliminazione produce una matrice triangolare superiore U e trasforma il vettore b in b'
+\begin{center} $\mathbf{U} \mathbf{x} = \mathbf{b}'$ \end{center}
+Poich\`e U \`e una matrice triangolare superiore, questo sistema di equazioni si pu\`o risolvere facilmente tramite sostituzione all'indietro.
+Durante la decomposizione LU, per\`o, b non \`e trasformata e l'equazione pu\`o essere scritta come
+\begin{center} $\mathbf{A} \mathbf{x} = \mathbf{L} \mathbf{U} \mathbf{x} = \mathbf{b}$ \end{center}
+cos\`i possiamo riusare la decomposizione se vogliamo risolvere lo stesso sistema per una differente b. \\\\
+Nel caso pi\`u generale, nel quale la fattorizzazione della matrice comprende anche l'utilizzo di scambi di riga nella matrice, viene introdotta anche una matrice di permutazione P, ed il sistema diventa:
+\begin{center} $\left\{ \begin{array}{l} Ly=Pb\\ Ux=y\end{array}\right.$ \end{center}
+La risoluzione di questo sistema permette la determinazione del vettore x cercato.
 
 \subsection{Jama}
-JAMA \`e un pacchetto di algebra lineare di base per Java. Fornisce le classi a livello di utente per la costruzione e la manipolazione di matrici reali, dense. \`E pensato per fornire funzionalit\`a sufficienti per problemi di routine, confezionati in un modo tale che sia naturale e comprensibile anche ai non esperti. \\
+JAMA \`e un pacchetto di algebra lineare di base scritto in Java. Fornisce le classi a livello di utente per la costruzione e la manipolazione di matrici reali, dense. \`E pensato per fornire funzionalit\`a sufficienti per problemi di routine. \\
 \\
 Sono disponibili cinque scomposizioni fondamentali della matrice JAMA:
 \begin{itemize}
@@ -55,23 +67,22 @@ Sono disponibili cinque scomposizioni fondamentali della matrice JAMA:
 \item Decomposizione autovalore di matrici quadrate e simmetriche sia nonsymmetric
 \item Valore Singolare decomposizione di matrici rettangolari
 \end{itemize}
-Funzionalit\`a non coperte: JAMA non \`e affatto un ambiente completo algebra lineare. Per esempio, non supporta matrici con struttura particolare o per ulteriori decomposizioni specializzati (ad esempio Shur, autovalore generalizzato). Matrici complesse non sono incluse. \\
+Funzionalit\`a non coperte: JAMA non \`e affatto un' ambiente completo algebra lineare. Per esempio, non supporta matrici con struttura particolare o per ulteriori decomposizioni specializzati (ad esempio Shur, autovalore generalizzato). Matrici complesse non sono incluse.
 
 \subsection{Programma lu-decomposition}
-Per il progetto ho deciso di utilizzare Jama, perch\`e sembra essere veloce e semplice da implementare, alla fine non mi ha deluso, tranne forse il fatto che non supporta i valori complessi e non ho potuto calcolare gli autovalori delle matrici rand, che ho lasciato ad n.a.\\
+Per il progetto ho deciso di utilizzare Jama, perch\`e sembra essere veloce e semplice da implementare. Non supporta matrici i valori complessi e per questo non ho potuto calcolare gli autovalori delle matrici rand, che ho lasciato ad n.a.\\
 Qui \`e listato il programma principale.
 
 \newpage
 \lstinputlisting[caption=lu-decompostion,label=lst:java]{../../lu-decomposition/src/Main.java}
-
 \newpage
 
 \subsection{Risultati e conclusioni}
 Qui presentiamo i valori dei test precedenti con cui dovremmo confrontare i valori ottenuti.\\
-Come vediamo quando viene calcolato l'errore relativo e l'errore sulla prima componente, manteniamo lo stesso ordine di grandezza nella maggior parte di casi, perdiamo o guadagniamo un ordine di grandezza nel caso di matrici bad e very bad. \\
-Nel caso del calcolo del settimo autovalore i risultati sono praticamente gli stessi. \\
-Nei valori ottenuti abbiamo aggiunto due colonne: Time to solve che \`e il tempo di calcolo della lu-decomposition e il tempo di calcolo degli autovalori. \\
-Come vediamo entrambi i tempi si matengono bassi tranne nel caso di rand-5000 per il tempo di calcolo della lu-decomposition e eig-5000 nel caso del calcolo degli autovalori. \\
+Quando viene calcolato l'errore relativo e l'errore sulla prima componente, manteniamo lo stesso ordine di grandezza nella maggior parte di casi e, a volte, perdiamo o guadagniamo un ordine di grandezza nel caso di matrici bad e very bad. \\
+Nel caso del calcolo del settimo autovalore i risultati sono praticamente identici. \\
+Nella tabella dei valori ottenuti abbiamo aggiunto due colonne: Time to solve che \`e il tempo di calcolo della lu-decomposition e il tempo di calcolo degli autovalori. \\
+Entrambi i tempi si matengono bassi tranne nel caso di rand-5000 per il tempo di calcolo della lu-decomposition e eig-5000 nel caso del calcolo dei suoi autovalori. \\
 
 \begin{table}[h]
 \caption {Valori dei test precedenti} \label{tab:title}
@@ -145,20 +156,29 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
 \end{table}
 
 \newpage
-
 \section{Discrete Cosine Transform}
 \subsection{Teoria}
+Consideriamo N vettori di $\mathbb{R}^N$ definiti da 
+\begin{center} $(w_k)_i = cos(k{\pi}x_i)$ \end{center}
+dove $x_i = i/N + 1/2*(1/N) = (2i+1)/(2N)$, i = $0..N-1$.\\
+Definiamo
+\begin{center} $a_k = \frac{1}{||w_k||} = \left\{ \begin{array}{ll} \sqrt{\frac{1}{N}} & k=0\\ \sqrt{\frac{2}{N}} & k >= 1\end{array}\right.$ \end{center}
+in modo che 
+\begin{center} $(\tilde{w_k})_i = a_kw_k$ \end{center}
+sia una base ortonormale. \\\\
+La DCT (Discrete Cosine Transform) consiste nel calcolare i coefficenti di un vettore $y = (y_0,...,y_N-1)$ nella base $\{\tilde{w_k}\}$.
+
 \subsection{JTransforms}
-JTransforms \`e la prima, open source, multithreaded libreria FFT scritta in puro Java. Attualmente, quattro tipi di trasformazioni sono disponibili: Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Discrete Sine Transform (DST) e Discrete Hartley Transform (DHT).\\
+JTransforms \`e la prima, open source, libreria multithreaded FFT scritta in puro Java. Attualmente, sono disponibili quattro tipi di trasformazioni: Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Discrete Sine Transform (DST) e Discrete Hartley Transform (DHT).\\
 \\
 Caratteristiche:
 \begin{itemize}
 \item L'implementazione pi\`u veloce di DFT, DCT, DST e DHT in puro Java.
-\item trasformazioni a 1, 2 e 3 dimensioni
+\item Trasformazioni a 1, 2 e 3 dimensioni
 \item Dimensione arbitraria dei dati.
 \item Singola e doppia precisione.
 \item Varianti Uni-dimensionale e multi-dimensionale di trasformazioni 2D e 3D.
-\item Multithreading automatico - i thread sono utilizzati automaticamente se il numero di CPU > 1.
+\item Multithreading automatico - i thread sono utilizzati automaticamente se il numero di CPU $>$ 1.
 \item FFT ottimizzate per i dati di input reali (40\% pi\`u veloce che con i dati complessi).
 \end{itemize}
 Limitazioni:
@@ -172,13 +192,14 @@ Limitazioni:
 
 \subsection{Programma discrete-cosine-transform}
 Per il progetto ho deciso di utilizzare JTransforms come implementazione FAST.\\
-Qui \`e listato della classe che gestisce la mia implementazione di dct sia unidemensionale che bidimensionale.
+Qui \`e listata la classe che gestisce la mia implementazione di dct sia unidemensionale che bidimensionale. \\
+Nel caso bidimensionale ho implementato sia quella diretta a due dimensioni, che quella fatta prima su righe e poi su colonne. I benchmark sono stati eseguiti solo sulla seconda implementazione.
 
 \lstinputlisting[caption=discrete-cosine-transform,label=lst:java]{../src/Dct.java}
 
 \subsection{Risultati e conclusioni}
 Nella tabella riportata qui sotto ho messo i risultati dei benchmark sia della mia implementazione che di Jtransforms.
-Notiamo la grande differenza nei tempi di computazione sia dovuta al fatto che Jtransforms utilizza multithread sia anche per l'implementazione FAST.
+Notiamo la grande differenza nei tempi di computazione dovuta, sia al fatto che Jtransforms utilizza multithread, sia anche per l'implementazione FAST.
 \\\\
 \begin{figure}[htbp]
 \centering

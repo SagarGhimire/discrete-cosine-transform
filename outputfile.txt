@@ -1,1 +1,794 @@
 read: /home/simon/projects/discrete-cosine-transform/imgs/cathedral.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 7284
+188 250 <-> 282 376
+filtered at 0.75
+125 250 <-> 188 376
+filtered at 0.5
+62 250 <-> 94 376
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7713
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+96 384 <-> 64 256
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19314
+258 344 <-> 380 507
+filtered at 0.75
+172 344 <-> 254 507
+filtered at 0.5
+86 344 <-> 127 507
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 7566
+188 250 <-> 282 376
+filtered at 0.75
+125 250 <-> 188 376
+filtered at 0.5
+62 250 <-> 94 376
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+time on my dct2: 18239
+380 506 <-> 248 331
+filtered at 0.75
+253 506 <-> 166 331
+filtered at 0.5
+126 506 <-> 83 331
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+time on my dct2: 10189
+294 392 <-> 220 294
+filtered at 0.75
+196 392 <-> 147 294
+filtered at 0.5
+98 392 <-> 74 294
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+time on my dct2: 3394
+213 284 <-> 142 189
+filtered at 0.75
+142 284 <-> 94 189
+filtered at 0.5
+71 284 <-> 47 189
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+time on my dct2: 7933
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+96 384 <-> 64 256
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+time on my dct2: 7624
+282 376 <-> 188 250
+filtered at 0.75
+188 376 <-> 125 250
+filtered at 0.5
+94 376 <-> 62 250
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+time on my dct2: 7490
+282 376 <-> 188 250
+filtered at 0.75
+188 376 <-> 125 250
+filtered at 0.5
+94 376 <-> 62 250
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+time on my dct2: 10281
+294 392 <-> 220 294
+filtered at 0.75
+196 392 <-> 147 294
+filtered at 0.5
+98 392 <-> 74 294
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+time on my dct2: 10178
+294 392 <-> 220 294
+filtered at 0.75
+196 392 <-> 147 294
+filtered at 0.5
+98 392 <-> 74 294
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+time on my dct2: 21798
+399 532 <-> 267 356
+filtered at 0.75
+266 532 <-> 178 356
+filtered at 0.5
+133 532 <-> 89 356
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+time on my dct2: 7705
+281 375 <-> 188 250
+filtered at 0.75
+188 375 <-> 125 250
+filtered at 0.5
+94 375 <-> 62 250
+filtered at 0.25
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 8278
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+time on my dct2: 132508
+676 902 <-> 508 677
+filtered at 0.75
+19 384 <-> 13 256
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 21934
+258 344 <-> 380 507
+filtered at 0.75
+172 344 <-> 254 507
+filtered at 0.5
+86 344 <-> 127 507
+filtered at 0.25
+34 344 <-> 51 507
+filtered at 0.1
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 8607
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+17 344 <-> 25 507
+filtered at 0.05
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+19 384 <-> 13 256
+filtered at 0.05
+time on my dct2: 8674
+188 250 <-> 282 376
+filtered at 0.75
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+125 250 <-> 188 376
+filtered at 0.5
+62 250 <-> 94 376
+filtered at 0.25
+25 250 <-> 38 376
+filtered at 0.1
+time on my dct2: 24098
+258 344 <-> 380 507
+filtered at 0.75
+12 250 <-> 19 376
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+172 344 <-> 254 507
+filtered at 0.5
+time on my dct2: 21020
+380 506 <-> 248 331
+filtered at 0.75
+253 506 <-> 166 331
+filtered at 0.5
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7785
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+19 384 <-> 13 256
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19052
+258 344 <-> 380 507
+filtered at 0.75
+172 344 <-> 254 507
+filtered at 0.5
+86 344 <-> 127 507
+filtered at 0.25
+34 344 <-> 51 507
+filtered at 0.1
+17 344 <-> 25 507
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 8757
+188 250 <-> 282 376
+filtered at 0.75
+125 250 <-> 188 376
+filtered at 0.5
+62 250 <-> 94 376
+filtered at 0.25
+25 250 <-> 38 376
+filtered at 0.1
+12 250 <-> 19 376
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7996
+288 384 <-> 192 256
+filtered at 0.75
+192 384 <-> 128 256
+filtered at 0.5
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+19 384 <-> 13 256
+filtered at 0.05
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19585
+258 344 <-> 380 507
+filtered at 0.75
+172 344 <-> 254 507
+filtered at 0.5
+86 344 <-> 127 507
+filtered at 0.25
+34 344 <-> 51 507
+filtered at 0.1
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7909
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+19 384 <-> 13 256
+filtered at 0.05
+4 384 <-> 3 256
+filtered at 0.01
+0 384 <-> 0 256
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19892
+86 344 <-> 127 507
+filtered at 0.25
+34 344 <-> 51 507
+filtered at 0.1
+17 344 <-> 25 507
+filtered at 0.05
+3 344 <-> 5 507
+filtered at 0.01
+0 344 <-> 1 507
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 7979
+62 250 <-> 94 376
+filtered at 0.25
+25 250 <-> 38 376
+filtered at 0.1
+12 250 <-> 19 376
+filtered at 0.05
+2 250 <-> 4 376
+filtered at 0.01
+0 250 <-> 0 376
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+time on my dct2: 18119
+126 506 <-> 83 331
+filtered at 0.25
+51 506 <-> 33 331
+filtered at 0.1
+25 506 <-> 17 331
+filtered at 0.05
+5 506 <-> 3 331
+filtered at 0.01
+1 506 <-> 0 331
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+time on my dct2: 10165
+98 392 <-> 74 294
+filtered at 0.25
+39 392 <-> 29 294
+filtered at 0.1
+20 392 <-> 15 294
+filtered at 0.05
+4 392 <-> 3 294
+filtered at 0.01
+0 392 <-> 0 294
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+time on my dct2: 3258
+71 284 <-> 47 189
+filtered at 0.25
+28 284 <-> 19 189
+filtered at 0.1
+14 284 <-> 9 189
+filtered at 0.05
+3 284 <-> 2 189
+filtered at 0.01
+0 284 <-> 0 189
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+time on my dct2: 8097
+96 384 <-> 64 256
+filtered at 0.25
+38 384 <-> 26 256
+filtered at 0.1
+19 384 <-> 13 256
+filtered at 0.05
+4 384 <-> 3 256
+filtered at 0.01
+0 384 <-> 0 256
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+time on my dct2: 7732
+94 376 <-> 62 250
+filtered at 0.25
+38 376 <-> 25 250
+filtered at 0.1
+19 376 <-> 12 250
+filtered at 0.05
+4 376 <-> 2 250
+filtered at 0.01
+0 376 <-> 0 250
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+time on my dct2: 7600
+94 376 <-> 62 250
+filtered at 0.25
+38 376 <-> 25 250
+filtered at 0.1
+19 376 <-> 12 250
+filtered at 0.05
+4 376 <-> 2 250
+filtered at 0.01
+0 376 <-> 0 250
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+time on my dct2: 10147
+98 392 <-> 74 294
+filtered at 0.25
+39 392 <-> 29 294
+filtered at 0.1
+20 392 <-> 15 294
+filtered at 0.05
+4 392 <-> 3 294
+filtered at 0.01
+0 392 <-> 0 294
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+time on my dct2: 10019
+98 392 <-> 74 294
+filtered at 0.25
+39 392 <-> 29 294
+filtered at 0.1
+20 392 <-> 15 294
+filtered at 0.05
+4 392 <-> 3 294
+filtered at 0.01
+0 392 <-> 0 294
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+time on my dct2: 21619
+133 532 <-> 89 356
+filtered at 0.25
+53 532 <-> 36 356
+filtered at 0.1
+27 532 <-> 18 356
+filtered at 0.05
+5 532 <-> 4 356
+filtered at 0.01
+1 532 <-> 0 356
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+time on my dct2: 7598
+94 375 <-> 62 250
+filtered at 0.25
+38 375 <-> 25 250
+filtered at 0.1
+19 375 <-> 12 250
+filtered at 0.05
+4 375 <-> 2 250
+filtered at 0.01
+0 375 <-> 0 250
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+time on my dct2: 126391
+226 902 <-> 169 677
+filtered at 0.25
+90 902 <-> 68 677
+filtered at 0.1
+45 902 <-> 34 677
+filtered at 0.05
+9 902 <-> 7 677
+filtered at 0.01
+1 902 <-> 1 677
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+time on my dct2: 77826
+190 761 <-> 142 569
+filtered at 0.25
+76 761 <-> 57 569
+filtered at 0.1
+38 761 <-> 28 569
+filtered at 0.05
+8 761 <-> 6 569
+filtered at 0.01
+1 761 <-> 1 569
+filtered at 0.001
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7827
+3 384 <-> 2 256
+filtered at 0.0075
+2 384 <-> 1 256
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19937
+3 344 <-> 4 507
+filtered at 0.0075
+2 344 <-> 3 507
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 9627
+2 250 <-> 3 376
+filtered at 0.0075
+1 250 <-> 2 376
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+time on my dct2: 18698
+4 506 <-> 2 331
+filtered at 0.0075
+3 506 <-> 2 331
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+time on my dct2: 10497
+3 392 <-> 2 294
+filtered at 0.0075
+2 392 <-> 1 294
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+time on my dct2: 3225
+2 284 <-> 1 189
+filtered at 0.0075
+1 284 <-> 1 189
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+time on my dct2: 8031
+3 384 <-> 2 256
+filtered at 0.0075
+2 384 <-> 1 256
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+time on my dct2: 7697
+3 376 <-> 2 250
+filtered at 0.0075
+2 376 <-> 1 250
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+time on my dct2: 7602
+3 376 <-> 2 250
+filtered at 0.0075
+2 376 <-> 1 250
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+time on my dct2: 10311
+3 392 <-> 2 294
+filtered at 0.0075
+2 392 <-> 1 294
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+time on my dct2: 10188
+3 392 <-> 2 294
+filtered at 0.0075
+2 392 <-> 1 294
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+time on my dct2: 22197
+4 532 <-> 3 356
+filtered at 0.0075
+3 532 <-> 2 356
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+time on my dct2: 7705
+3 375 <-> 2 250
+filtered at 0.0075
+2 375 <-> 1 250
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+time on my dct2: 132897
+7 902 <-> 5 677
+filtered at 0.0075
+5 902 <-> 3 677
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+time on my dct2: 78562
+6 761 <-> 4 569
+filtered at 0.0075
+4 761 <-> 3 569
+filtered at 0.005
+finish!
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7822
+3 384 <-> 2 256
+filtered at 0.0075
+2 384 <-> 1 256
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 20053
+3 344 <-> 4 507
+filtered at 0.0075
+2 344 <-> 3 507
+filtered at 0.005
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 8132
+2 250 <-> 3 376
+filtered at 0.0075
+time on my dct2: 8799
+2 384 <-> 1 256
+filtered at 0.004
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7796
+2 384 <-> 1 256
+filtered at 0.004
+1 384 <-> 1 256
+filtered at 0.002
+0 384 <-> 0 256
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19929
+1 344 <-> 2 507
+filtered at 0.004
+1 344 <-> 1 507
+filtered at 0.002
+0 344 <-> 0 507
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 8876
+1 250 <-> 2 376
+filtered at 0.004
+0 250 <-> 1 376
+filtered at 0.002
+0 250 <-> 0 376
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+time on my dct2: 18364
+2 506 <-> 1 331
+filtered at 0.004
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7909
+2 384 <-> 1 256
+filtered at 0.004
+1 384 <-> 1 256
+filtered at 0.002
+0 384 <-> 0 256
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19869
+1 344 <-> 2 507
+filtered at 0.004
+1 344 <-> 1 507
+filtered at 0.002
+0 344 <-> 0 507
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 7724
+1 250 <-> 2 376
+filtered at 0.004
+0 250 <-> 1 376
+filtered at 0.002
+0 250 <-> 0 376
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/artificial.bmp
+time on my dct2: 7824
+start filtering at 0.004
+2 384 <-> 1 256
+filtered at 0.004
+start filtering at 0.002
+1 384 <-> 1 256
+filtered at 0.002
+start filtering at 5.0E-4
+0 384 <-> 0 256
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/bridge.bmp
+time on my dct2: 19619
+start filtering at 0.004
+1 344 <-> 2 507
+filtered at 0.004
+start filtering at 0.002
+1 344 <-> 1 507
+filtered at 0.002
+start filtering at 5.0E-4
+0 344 <-> 0 507
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/cathedral.bmp
+time on my dct2: 10133
+start filtering at 0.004
+1 250 <-> 2 376
+filtered at 0.004
+start filtering at 0.002
+0 250 <-> 1 376
+filtered at 0.002
+start filtering at 5.0E-4
+0 250 <-> 0 376
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/deer.bmp
+time on my dct2: 18733
+start filtering at 0.004
+2 506 <-> 1 331
+filtered at 0.004
+start filtering at 0.002
+1 506 <-> 1 331
+filtered at 0.002
+start filtering at 5.0E-4
+0 506 <-> 0 331
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/fireworks.bmp
+time on my dct2: 10269
+start filtering at 0.004
+2 392 <-> 1 294
+filtered at 0.004
+start filtering at 0.002
+1 392 <-> 1 294
+filtered at 0.002
+start filtering at 5.0E-4
+0 392 <-> 0 294
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/flower_foveon.bmp
+time on my dct2: 3431
+start filtering at 0.004
+1 284 <-> 1 189
+filtered at 0.004
+start filtering at 0.002
+1 284 <-> 0 189
+filtered at 0.002
+start filtering at 5.0E-4
+0 284 <-> 0 189
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/hdr.bmp
+time on my dct2: 8025
+start filtering at 0.004
+2 384 <-> 1 256
+filtered at 0.004
+start filtering at 0.002
+1 384 <-> 1 256
+filtered at 0.002
+start filtering at 5.0E-4
+0 384 <-> 0 256
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_200.bmp
+time on my dct2: 7540
+start filtering at 0.004
+2 376 <-> 1 250
+filtered at 0.004
+start filtering at 0.002
+1 376 <-> 0 250
+filtered at 0.002
+start filtering at 5.0E-4
+0 376 <-> 0 250
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/leaves_iso_1600.bmp
+time on my dct2: 7554
+start filtering at 0.004
+2 376 <-> 1 250
+filtered at 0.004
+start filtering at 0.002
+1 376 <-> 0 250
+filtered at 0.002
+start filtering at 5.0E-4
+0 376 <-> 0 250
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_100.bmp
+time on my dct2: 10129
+start filtering at 0.004
+2 392 <-> 1 294
+filtered at 0.004
+start filtering at 0.002
+1 392 <-> 1 294
+filtered at 0.002
+start filtering at 5.0E-4
+0 392 <-> 0 294
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/nightshot_iso_1600.bmp
+time on my dct2: 10141
+start filtering at 0.004
+2 392 <-> 1 294
+filtered at 0.004
+start filtering at 0.002
+1 392 <-> 1 294
+filtered at 0.002
+start filtering at 5.0E-4
+0 392 <-> 0 294
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/spider_web.bmp
+time on my dct2: 21945
+start filtering at 0.004
+2 532 <-> 1 356
+filtered at 0.004
+start filtering at 0.002
+1 532 <-> 1 356
+filtered at 0.002
+start filtering at 5.0E-4
+0 532 <-> 0 356
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/zone_plate.bmp
+time on my dct2: 7484
+start filtering at 0.004
+2 375 <-> 1 250
+filtered at 0.004
+start filtering at 0.002
+1 375 <-> 0 250
+filtered at 0.002
+start filtering at 5.0E-4
+0 375 <-> 0 250
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_building.bmp
+time on my dct2: 126562
+start filtering at 0.004
+4 902 <-> 3 677
+filtered at 0.004
+start filtering at 0.002
+2 902 <-> 1 677
+filtered at 0.002
+start filtering at 5.0E-4
+0 902 <-> 0 677
+filtered at 5.0E-4
+read: /home/simon/projects/discrete-cosine-transform/imgs/scaled/scaled/scaled/big_tree.bmp
+time on my dct2: 76283
+start filtering at 0.004
+3 761 <-> 2 569
+filtered at 0.004
+start filtering at 0.002
+2 761 <-> 1 569
+filtered at 0.002
+start filtering at 5.0E-4
+0 761 <-> 0 569
+filtered at 5.0E-4
+finish!
