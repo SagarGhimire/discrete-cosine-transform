@@ -1,0 +1,13 @@
+\select@language {italian}
+\contentsline {section}{\numberline {1}Lu Decomposition}{1}
+\contentsline {subsection}{\numberline {1.1}Teoria}{1}
+\contentsline {subsection}{\numberline {1.2}Jama}{2}
+\contentsline {subsection}{\numberline {1.3}Programma lu-decomposition}{2}
+\contentsline {subsection}{\numberline {1.4}Risultati e conclusioni}{7}
+\contentsline {section}{\numberline {2}Discrete Cosine Transform}{8}
+\contentsline {subsection}{\numberline {2.1}Teoria}{8}
+\contentsline {subsection}{\numberline {2.2}Caso bidimensionale}{9}
+\contentsline {subsection}{\numberline {2.3}JTransforms}{9}
+\contentsline {subsection}{\numberline {2.4}Programma discrete-cosine-transform}{10}
+\contentsline {subsection}{\numberline {2.5}Risultati e conclusioni}{18}
+\contentsline {subsection}{\numberline {2.6}Filtro delle frequenze}{21}
