@@ -9,24 +9,36 @@ import java.util.Date;
 
 import javax.imageio.ImageIO;
 
+import edu.emory.mathcs.jtransforms.dct.DoubleDCT_2D;
+
 public class CreateImage {
 	private BufferedImage firstimage;
 	private BufferedImage secondImage;
+	private DoubleDCT_2D dct_2d;
 	
-	public void saveFilteredImage(String src, double[][] dct2, double threshold, double offset) throws Exception {
+	public void saveFilteredImage(String src, double[][] dct2, double threshold, double offset, boolean fast) throws Exception {
 		double[][] filtered;
 		double[][] newPixels;
 		File file;
+		String fileName;
 		
 		System.out.println("start filtering at "+threshold);
 		
 		filtered = Dct.filter(dct2, threshold);
 		System.out.println("filtered at "+threshold);
 
-		newPixels = Dct.idct2(filtered, -1*offset);
-		secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
-	
-		file = new File(src+"-result-"+threshold+".jpg");
+		if(!fast) {
+			newPixels = Dct.idct2(filtered, -1*offset);
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+			fileName = src+"-result-"+threshold+".jpg";
+		} else {
+			dct_2d.inverse(filtered, true);
+			newPixels = filtered;
+			secondImage = CreateImage.setPixels(CreateImage.deepCopy(firstimage), newPixels);
+			fileName = src+"-result-"+threshold+"-fast.jpg";
+		}
+		
+		file = new File(fileName);
 		ImageIO.write(secondImage, "jpg", file);
 	}
 
@@ -40,29 +52,32 @@ public class CreateImage {
 			
 			double[][] pixels = CreateImage.getPixels(firstimage);
 	
-			long startS = new Date().getTime();
-			double[][] result = Dct.dct2(pixels, offset);
-			long endS =  new Date().getTime();
-			System.out.println("time on my dct2: "+(endS-startS));
+//			long startS = new Date().getTime();
+//			double[][] result = Dct.dct2(pixels, offset);
+//			long endS =  new Date().getTime();
+//			System.out.println("time on my dct2: "+(endS-startS));
 			
-//			int n = pixels.length;
-//			int m = pixels[0].length;
-//			long startO = new Date().getTime();
-//			DoubleDCT_2D dct_2d = new DoubleDCT_2D(n, m);
-//			dct_2d.forward(pixels, true);
-//			long endO = new Date().getTime();
-//			System.out.println("time on jtransform dct2: "+(endO-startO));
+			int n = pixels.length;
+			int m = pixels[0].length;
+			long startO = new Date().getTime();
+			dct_2d = new DoubleDCT_2D(n, m);
 			
-//			saveFilteredImage(src, result, 0.25, offset);
-//			saveFilteredImage(src, result, 0.10, offset);
-//			saveFilteredImage(src, result, 0.05, offset);
-//			saveFilteredImage(src, result, 0.01, offset);
-//			saveFilteredImage(src, result, 0.0075, offset);
-//			saveFilteredImage(src, result, 0.005, offset);
-			saveFilteredImage(src, result, 0.004, offset);
-			saveFilteredImage(src, result, 0.002, offset);
-//			saveFilteredImage(src, result, 0.001, offset);
-			saveFilteredImage(src, result, 0.0005, offset);
+			double[][] result = pixels;
+			
+			dct_2d.forward(result, true);
+			long endO = new Date().getTime();
+			System.out.println("time on jtransform dct2: "+(endO-startO));
+			
+			saveFilteredImage(src, result, 0.25, offset, true);
+			saveFilteredImage(src, result, 0.10, offset, true);
+			saveFilteredImage(src, result, 0.05, offset, true);
+			saveFilteredImage(src, result, 0.01, offset, true);
+			saveFilteredImage(src, result, 0.0075, offset, true);
+			saveFilteredImage(src, result, 0.005, offset, true);
+			saveFilteredImage(src, result, 0.004, offset, true);
+			saveFilteredImage(src, result, 0.002, offset, true);
+			saveFilteredImage(src, result, 0.001, offset, true);
+			saveFilteredImage(src, result, 0.0005, offset, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

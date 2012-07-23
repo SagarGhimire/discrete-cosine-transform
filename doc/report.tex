@@ -11,7 +11,7 @@
 % OK [LD] risultati
 % OK [LD] conclusioni
 
-% TODO [DCT2] teoria
+% OK [DCT2] teoria
 % OK [DCT2] jtransform
 % OK [DCT2] i listati dei programmi
 % OK [DCT2] risultati
@@ -37,9 +37,9 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
 
 \section{Lu Decomposition}
-
 \subsection{Teoria}
 Sia A una matrice invertibile. Allora A pu\`o essere decomposta come
 \begin{center} $\mathbf{PA} = \mathbf{LU}$ \end{center}
@@ -136,7 +136,7 @@ Test         &	Errore Relativo  &	Errore Prima Comp  & Autovalore n.7    &	Time 
       bad-10 &	    3.118816e-07 &	      2.176155e-07 &           6.000000 & 	0ms		 	 &		0ms   \\
      bad-100 &	    2.258293e-05 &	      2.394252e-05 &           6.000000 & 	1ms		 	 &		0ms   \\
      bad-500 &	    4.622912e-05 &	      4.654016e-05 &           6.000000 &	69ms		 &		2ms   \\
-    bad-1000 &	    2.279306e-04 &	      2.257559e-04 &           6.000000 &	645ms		&		13ms   \\
+    bad-1000 &	    2.279306e-04 &	      2.257559e-04 &           6.000000 &	645ms		&		13ms  \\
   verybad-10 &	    4.993346e-04 &	      4.179128e-04 &           6.000000 & 	0ms		 	&		0ms   \\
  verybad-100 &	    3.283544e-03 &	      3.125627e-03 &           6.000000 & 	2ms		 	&		0ms   \\
  verybad-500 &	    1.065932e-02 &	      1.067230e-02 &           6.000000 &	70ms		 &		1ms   \\
@@ -148,8 +148,8 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
       eig-50 &	            n.a. &	              n.a. &           0.183589 & 	0ms		 &			0ms   \\
      eig-100 &	            n.a. &	              n.a. &           0.105820 & 	0ms		 &			1ms   \\
     eig-1000 &	            n.a. &	              n.a. &           0.005791 & 	0ms		 &			7ms   \\
-    eig-2000 &	            n.a. &	              n.a. &           0.004094 & 	0ms		&			30ms   \\
-    eig-5000 &	            n.a. &	              n.a. &           0.001635 &	0ms		&			967ms   \\
+    eig-2000 &	            n.a. &	              n.a. &           0.004094 & 	0ms		&			30ms  \\
+    eig-5000 &	            n.a. &	              n.a. &           0.001635 &	0ms		&			967ms \\
 \hline
 \end{tabular}
 \end{center}
@@ -160,13 +160,33 @@ verybad-1000 &	    2.926093e-02 &	      2.903832e-02 &           6.000000 &	644m
 \subsection{Teoria}
 Consideriamo N vettori di $\mathbb{R}^N$ definiti da 
 \begin{center} $(w_k)_i = cos(k{\pi}x_i)$ \end{center}
-dove $x_i = i/N + 1/2*(1/N) = (2i+1)/(2N)$, i = $0..N-1$.\\
+dove $x_i = \frac{i}{N} + \frac{1}{2}(\frac{1}{N}) = \frac{2i+1}{2N}$, i = $0..N-1$.\\
 Definiamo
 \begin{center} $a_k = \frac{1}{||w_k||} = \left\{ \begin{array}{ll} \sqrt{\frac{1}{N}} & k=0\\ \sqrt{\frac{2}{N}} & k >= 1\end{array}\right.$ \end{center}
 in modo che 
 \begin{center} $(\tilde{w_k})_i = a_kw_k$ \end{center}
 sia una base ortonormale. \\\\
 La DCT (Discrete Cosine Transform) consiste nel calcolare i coefficenti di un vettore $y = (y_0,...,y_N-1)$ nella base $\{\tilde{w_k}\}$.
+
+\subsection{Caso bidimensionale}
+Si opera con i cosiddetti "prodotti tensiorale".\\
+Definiamo:
+\begin{center} 
+$x_i = \frac{i}{N} + \frac{1}{2}(\frac{1}{N}) = \frac{2i+1}{2N}$, i = $0..N-1$.\\
+$y_j = \frac{j}{M} + \frac{1}{2}(\frac{1}{M}) = \frac{2j+1}{2M}$, j = $0..M-1$.
+\end{center}
+Definiamo gli $e_{ij}$ \`e una matrice con 1 in posizione (ij) e zero altrove. In altre parole gli NM $\{e_{ij}\}$ sono ortonormali.
+Definiamo poi:
+\begin{center} $(w_{kl})_{ij} = cos(k{\pi}x_i)cos(l{\pi}y_j)$ \end{center}
+ed anche i NM $\{w_{kl}\}$ sono ortogonali.
+Se definiamo quindi $\tilde{w_{kl}} = a_{kl}w_{kl}$ abbiamo una base ortonormale.
+Da questo troviamo il calcolo della dct2:
+\begin{center} $c_{kl} = {a_{kl}}^2\sum_{i=0}^{N-1}\sum_{j=0}^{M-1}z_{ij}cos(k{\pi}x_i)cos(l{\pi}y_j)$ \end{center}
+Possiamo scrivere la formula come
+\begin{center} $c_{kl} = a_{kl}\sum_{i=0}^{N-1}[a_{kl}\sum_{j=0}^{M-1}z_{ij}cos(l{\pi}y_j)]cos(k{\pi}x_i)$ \end{center}
+Nella parentesi quadra ci sono N DCT monodimensionale fatte su un campione lungo M e poi restano M DCT monodimensionale su un campione lungo N.
+Quindi:
+\begin{center} $N \cdot DCT(M) + M \cdot DCT(N) \sim 2NM$ \end{center}
 
 \subsection{JTransforms}
 JTransforms \`e la prima, open source, libreria multithreaded FFT scritta in puro Java. Attualmente, sono disponibili quattro tipi di trasformazioni: Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Discrete Sine Transform (DST) e Discrete Hartley Transform (DHT).\\
@@ -267,4 +287,11 @@ scaled/zone\_plate.bmp & 491263 & 408 & 1500 & 1000 \\
 \end{tabular}
 \end{table}
 
+\subsection{Filtro delle frequenze}
+La DCT \`e perfettamente reversibile e non perdiamo definizione dell'immagine. Nel caso in cui tagliamo un certo di numero prendendo n x n coefficenti significativi: \\
+QUI VANNO LE IMMAGINI \\
+Nel caso abbiamo provato anche con l'implementazione fast: \\
+QUI VANNO LE IMMAGINI \\
+che in alcuni casi ha avuto problemi: \\
+QUI VANNO LE IMMAGINI \\
 \end{document}
