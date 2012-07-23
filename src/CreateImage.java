@@ -68,16 +68,17 @@ public class CreateImage {
 			long endO = new Date().getTime();
 			System.out.println("time on jtransform dct2: "+(endO-startO));
 			
-			saveFilteredImage(src, result, 0.25, offset, true);
-			saveFilteredImage(src, result, 0.10, offset, true);
-			saveFilteredImage(src, result, 0.05, offset, true);
-			saveFilteredImage(src, result, 0.01, offset, true);
-			saveFilteredImage(src, result, 0.0075, offset, true);
-			saveFilteredImage(src, result, 0.005, offset, true);
-			saveFilteredImage(src, result, 0.004, offset, true);
-			saveFilteredImage(src, result, 0.002, offset, true);
-			saveFilteredImage(src, result, 0.001, offset, true);
-			saveFilteredImage(src, result, 0.0005, offset, true);
+			saveFilteredImage(src, result.clone(), 0.5, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.25, offset, true);
+			saveFilteredImage(src, result.clone(), 0.1, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.05, offset, true);
+			saveFilteredImage(src, result.clone(), 0.01, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.0075, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.005, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.004, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.002, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.001, offset, true);
+			//saveFilteredImage(src, result.clone(), 0.0005, offset, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

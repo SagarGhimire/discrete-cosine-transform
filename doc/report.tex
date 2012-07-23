@@ -31,6 +31,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{listings}
+\usepackage{subfigure}
 \lstset{language=Java, basicstyle=\small}
 \lstset{linewidth=\textwidth, showstringspaces=false}
 \lstset{frame=trBL}
@@ -288,10 +289,34 @@ scaled/zone\_plate.bmp & 491263 & 408 & 1500 & 1000 \\
 \end{table}
 
 \subsection{Filtro delle frequenze}
-La DCT \`e perfettamente reversibile e non perdiamo definizione dell'immagine. Nel caso in cui tagliamo un certo di numero prendendo n x n coefficenti significativi: \\
-QUI VANNO LE IMMAGINI \\
-Nel caso abbiamo provato anche con l'implementazione fast: \\
-QUI VANNO LE IMMAGINI \\
-che in alcuni casi ha avuto problemi: \\
-QUI VANNO LE IMMAGINI \\
+La DCT \`e perfettamente reversibile e non perdiamo definizione dell'immagine. \\
+Nel caso in cui vogliamo tagliare un certo numero di frequenze definiamo DCT(M\%), dove che sia per altezza che larghezza prendiamo $\frac{M}{100} \cdot N$ valori, dove N sono i valori totali. \\
+Nelle figure sottostanti vediamo nelle prime quattro, il caso in cui tagliamo le frequenze con la mia implementazione e nelle quattro foto successive il filtraggio con l'implementazione FAST (Jtransforms). \\
+Come vediamo JTransforms non \`e infallibile, in alcuni casi, se si tagliano certe frequenze, non riesce pi\`u a ricostruire l'immagine, questo \`e causato dal fatto che sono pi\`u thread che cercano di collaborare, si ricade su un problema di threads ed \`e un baco noto. \\
+\begin{figure}[htbp]
+\centering
+\subfigure[Immagine originale]
+{\includegraphics[width=8cm]{bridge.eps}}
+\hspace{5mm}
+\subfigure[DCT(50\%)]
+{\includegraphics[width=8cm]{bridge-0500.eps}}
+\subfigure[DCT(10\%)]
+{\includegraphics[width=8cm]{bridge-0100.eps}}
+\hspace{5mm}
+\subfigure[DCT(1\%)]
+{\includegraphics[width=8cm]{bridge-0010.eps}}
+\end{figure} \\
+\begin{figure}[htbp]
+\centering
+\subfigure[Immagine originale]
+{\includegraphics[width=8cm]{bridge.eps}}
+\hspace{5mm}
+\subfigure[FAST DCT(50\%)]
+{\includegraphics[width=8cm]{bridge-0500-fast.eps}}
+\subfigure[FAST DCT(10\%)]
+{\includegraphics[width=8cm]{bridge-0100-fast.eps}}
+\hspace{5mm}
+\subfigure[FAST DCT(1\%)]
+{\includegraphics[width=8cm]{bridge-0010-fast.eps}}
+\end{figure} \\
 \end{document}
